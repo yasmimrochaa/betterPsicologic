@@ -3,19 +3,18 @@
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    padding: 10;
-    color: #023047
+    padding: 0;
+    color: #000000
 }
 
 .page {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    align-content: center;
     justify-content: center;
-    width: 100%;
+    padding-left: 100px;
+    padding-right: 700px;
     height: 100vh;
-    background-image: url(image/fundo.png);
+    background-image: url(image/cadastro.png);
     background-repeat: no-repeat;
     background-position: right 0;
     background-size: cover;
@@ -24,10 +23,10 @@ body {
 .formCadastro {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.911);
     border-radius: 7px;
-    padding: 15px 40px;
-    box-shadow: 10px 10px 40px rgba(43, 170, 187, 0.822);
+    padding: 20px 50px;
+    box-shadow: -10px 10px 40px rgba(33, 107, 126, 0.548);
     gap: 5px
 }
 
@@ -83,11 +82,11 @@ body {
 }
 
 .formCadastro a:hover {
-    color: #0097B2;
+    color: #259B9F;
 }
 
 .btn {
-    background-color: #0097B2;
+    background-color: #259B9F;
     color: #fff;
     font-size: 14px;
     font-weight: 600;
@@ -100,6 +99,6 @@ body {
 
 .btn:hover {
     transform: scale(1.05);
-    background-color:#0097B2;
+    background-color:#259B9F;
 
 }
