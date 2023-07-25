@@ -5,9 +5,13 @@ body {
     margin: 0;
     padding: 0;
     color: #000000;
-    background-color: #C8F7F8;
-    background-image: url(image/teste.png);
+    
+}
 
+.fundo{
+    background-color: #C8F7F8;
+    background-image: linear-gradient(to left, #84E4E8, transparent, rgb(255, 255, 255));
+    background-image: url(image/teste.png);
 }
 
 .page {
