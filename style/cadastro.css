@@ -4,34 +4,37 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    color: #000000
+    color: #000000;
+    background-color: #C8F7F8;
+    background-image: linear-gradient(to left, #377E80, transparent, rgb(255, 255, 255));
+    
 }
+ 
+img{
+    padding-left: 50px;
+}
+
 
 .page {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 100px;
-    padding-right: 700px;
-    height: 100vh;
-    background-image: url(image/cadastro.png);
-    background-repeat: no-repeat;
-    background-position: right 0;
-    background-size: cover;
+    flex-flow: row wrap;
 }
+
+.coluna{
+    width: 40%;
+    padding: 50px;
+
+}
+
 
 .formCadastro {
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.911);
     border-radius: 7px;
-    padding: 20px 50px;
-    box-shadow: -10px 10px 40px rgba(33, 107, 126, 0.548);
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(33, 107, 126, 0.548);
     gap: 5px
-}
-
-.areaCadastro img {
-    width: 420px;
 }
 
 .formCadastro h1 {
