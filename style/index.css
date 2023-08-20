@@ -10,6 +10,7 @@ body{
     background-image: linear-gradient(to left, #84E4E8, transparent, rgb(255, 255, 255));
   }
 
+
 header{
     margin-top: 20px;
     background-color: #84E4E8;
@@ -29,10 +30,28 @@ header{
     color: #555;
     transition: all linear 160ms;
 }
+h1{
+    padding-left: 100px;
+}
+ 
+h3{
+    padding-left: 50px;
+    color: #259B9F;
+}
+
+p{
+    padding-left: 50px;
+    text-indent: 3ch;
+    font-size: 20px;
+}
 
 .socialMedia img{
     right: 150px;
     top: 5px;
     position: absolute;
     width: 40px;
+}
+
+.cabecalho {
+    padding-left: 70px;
 }
