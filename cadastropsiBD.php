@@ -11,22 +11,5 @@
     $sql = "INSERT INTO psicologo (cpf, nome, senha, email, telefone, dataNasc) 
             VALUES ('$cpf', '$nome', '$senha', '$email', '$telefone', '$dataNasc')";
 
-    echo $sql;
 
-    if ($conn->query($sql) === true) {
-        ?>
-        <script>
-            alert("Registro salvo com sucesso");
-            //window.location = 'cadastro.php';
-        </script>
-        <?php
-    }else {
-        ?>
-        <script>
-            alert("Erro ao inserir dados ");
-            //window.history.back();
-        </script>
-        <?php
-    }
-        
 ?>

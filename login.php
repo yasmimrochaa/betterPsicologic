@@ -25,6 +25,8 @@
             <a href="/">Esqueci minha senha</a>
             <a href="cadastro.php">Não possuo cadastro</a>
             <input type="submit" value="Acessar" class="btn" href="/"/>
+
+            
         </form>
         </div>
         

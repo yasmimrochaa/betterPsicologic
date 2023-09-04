@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,24 +13,33 @@
 <body>
     <div class="page">
         <div class="coluna">
-            <form method="POST" class="formCadastro">
+            <form action="cadastropsiBD.php" method="POST" class="formCadastro">
             <h1>Cadastro</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
-            <label name="nome">Nome completo</label>
-            <input type="text" placeholder="Digite seu nome completo" autofocus="true">
-            <label name="email">E-mail</label>
-            <input type="email" placeholder="Digite seu e-mail" />
-            <label name="cpf">CPF</label>
-            <input type="text" placeholder="Digite seu cpf">
-            <label name="telefone">Telefone</label>
-            <input type="tel" placeholder="Digite seu Telefone">
-            <label name="dataNas">Data de Nascimento</label>
-            <input type="date">
-            <label name="password">Senha</label>
-            <input type="password" placeholder="Digite sua senha" />
-            <label name="confPassword">Confirmar senha</label>
-            <input type="password" placeholder="Digite sua senha novamente" />
+
+            <label>Nome completo</label>
+            <input name="nome" type="text" placeholder="Digite seu nome completo" autofocus="true">
+
+            <label>E-mail</label>
+            <input name="email" type="email" placeholder="Digite seu e-mail" />
+
+            <label>CPF</label>
+            <input name="cpf" type="text" placeholder="Digite seu cpf">
+
+            <label>Telefone</label>
+            <input name="telefone" type="tel" placeholder="Digite seu Telefone">
+
+            <label>Data de Nascimento</label>
+            <input name="dataNasc" type="date">
+
+            <label>Senha</label>
+            <input name="password" type="password" placeholder="Digite sua senha" />
+
+            <label>Confirmar senha</label>
+            <input name="confPassword" type="password" placeholder="Digite sua senha novamente" />
+
             <a href="login.html">Já possuo cadastro</a>
+
             <input type="submit" value="Cadastrar" class="btn" href="/"/>
         </form>
         </div>
