@@ -2,11 +2,13 @@
     define('HOST', 'localhost');
     define('USER', 'root');
     define('PASSWORD', '');
-    define('DB', 'betterPsicologic');
+    define('DB', 'mytherapy');
 
     $conn = new mysqli(HOST, USER, PASSWORD, DB);
 
-    if($conn->connection_error){
+    if($conn->connect_error){
         die("Falha na conexao com o BD: " . $conn->connect_error);
+    }else{
+        echo 'Banco de dados conectado';
     }
 ?>

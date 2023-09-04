@@ -26,6 +26,11 @@ img{
 
 }
 
+.coluna2{
+    width: 40%;
+    padding: 50px;
+    align-items: center;
+}
 
 .formCadastro {
     display: flex;
