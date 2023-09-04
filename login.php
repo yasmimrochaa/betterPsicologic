@@ -15,13 +15,16 @@
             <img src="style/image/fundoLog.png" >
         </div>
         <div class="coluna">
-            <form method="POST" class="formLogin">
+            <form action="loginBD.php" method="POST" class="formLogin">
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
-            <label for="email">E-mail</label>
-            <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
-            <label for="password">Senha</label>
-            <input type="password" placeholder="Digite sua senha" />
+
+            <label>E-mail</label>
+            <input name="email" type="email" placeholder="Digite seu e-mail" autofocus="true" />
+
+            <label>Senha</label>
+            <input name="password" type="password" placeholder="Digite sua senha" />
+            
             <a href="/">Esqueci minha senha</a>
             <a href="cadastro.php">Não possuo cadastro</a>
             <input type="submit" value="Acessar" class="btn" href="/"/>
