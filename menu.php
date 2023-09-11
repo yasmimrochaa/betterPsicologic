@@ -8,99 +8,124 @@
 
     <title>Menu</title>
 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('sidebar/sidebar/fundo.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .conteudo {
+            padding-left: 100px;
+        }
+    </style>
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style/menu.css">
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <!-- Sidebar Holder -->
-        <nav id="sidebar">
-            <div id="dismiss">
-                <i class="glyphicon glyphicon-arrow-left"></i>
-            </div>
 
+    <div class="wrapper">
+        <!-- Sidebar  -->
+
+        <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Menu</h3>
+                <h1>Menu</h1>
             </div>
 
             <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#">Home</a>
+
+                <li>
+                    <a href="meuPerfil.php">Meu Perfil</a>
                 </li>
                 <li>
-                    <a href="#">Pacientes</a>
+                    <a href="#">Prontuários</a>
+
                 </li>
                 <li>
-                    <a href="#">Cadastro de Pacientes</a>
+                    <a href="#"> Minha Agenda</a>
                 </li>
                 <li>
-                    <a href="#">Agenda</a>
+                    <a href="cadastroPaciente.php">Cadastrar Clientes</a>
                 </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="#">Meu Perfil</a>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Voltar ao início</a>
                 </li>
+                <br>
                 <li>
-                    <a href="#">Sair</a>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Sair</a>
                 </li>
             </ul>
 
         </nav>
 
-        <!-- Page Content Holder -->
+        <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
-                    <div class="navbar-header">
-                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                            <i class="glyphicon glyphicon-align-left"></i>
-                        </button>
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+
+                        <i class="fas fa-align-left"></i>
+
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     </div>
                 </div>
             </nav>
 
-        </div>
-    </div>
+            <h1>
+                <center>Seja Bem Vindo(a)!</center>
+            </h1>
+            <br><br>
+            <div>
+                <p class="conteudo">
+                    <center> Primeiramente cadastre um cliente, logo após clique em consultar perfis <br>para
+                        conferir se concluiu o cadastro.
+                        Você poderá realizar o prontuário<br> do paciente com as informações solicitadas e em agenda
+                        você
+                        poderá <br> organizar
+                        seus horários da forma que desejar.<br>
+                </p>
+                </center>
+            </div>
 
+            <!-- jQuery CDN - Slim version (=without AJAX) -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <!-- Popper.JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+            <!-- Bootstrap JS -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-
-    <div class="overlay"></div>
-
-
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <!-- Bootstrap Js CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#sidebar").mCustomScrollbar({
-                theme: "minimal"
-            });
-
-            $('#dismiss, .overlay').on('click', function() {
-                $('#sidebar').removeClass('active');
-                $('.overlay').fadeOut();
-            });
-
-            $('#sidebarCollapse').on('click', function() {
-                $('#sidebar').addClass('active');
-                $('.overlay').fadeIn();
-                $('.collapse.in').toggleClass('in');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-        });
-    </script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#sidebarCollapse').on('click', function() {
+                        $('#sidebar').toggleClass('active');
+                    });
+                });
+            </script>
 </body>
 
 </html>

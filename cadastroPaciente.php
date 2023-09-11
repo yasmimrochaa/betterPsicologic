@@ -11,38 +11,38 @@
 <body>
     <div class="page"">
         <div class=" coluna2">
-        <form method="POST" class="formCadastro">
+        <form action="cadastroPacBD.php" method="POST" class="formCadastro">
             <h1>Cadastro de Pacientes</h1>
             <p>Digite os dados do Paciente nos campos abaixo.</p>
-            <label for="nome">Nome completo</label>
-            <input type="text" placeholder="Digite seu nome completo" autofocus="true">
+            <label>Nome completo</label>
+            <input name="nome" text" placeholder="Digite seu nome completo" autofocus="true">
 
-            <label for="email">E-mail</label>
-            <input type="email" placeholder="Digite seu e-mail" />
+            <label>E-mail</label>
+            <input name="email" type="email" placeholder="Digite seu e-mail" />
 
-            <label for="cpf">CPF</label>
-            <input type="text" placeholder="Digite seu cpf">
+            <label>CPF</label>
+            <input name="cpf" type="text" placeholder="Digite seu cpf">
 
-            <label for="telefone">Telefone</label>
-            <input type="text" placeholder="Digite seu telefone">
+            <label>Telefone</label>
+            <input name="telefone" type="text" placeholder="Digite seu telefone">
 
-            <label for="dataNasc">Data de Nasciemnto</label>
-            <input type="text" placeholder="Digite sua data de nascimento">
+            <label>Data de Nasciemnto</label>
+            <input name="dataNasc" type="date">
 
-            <label for="genero">Gênero</label>
-            <input type="text" placeholder="Digite seu gênero">
+            <label>Gênero</label>
+            <input name="genero" type="text" placeholder="Digite seu gênero">
 
-            <label for="endereco">Endereço</label>
-            <input type="text" placeholder="Digite seu endereco">
+            <label>Endereço</label>
+            <input name="endereco" type="text" placeholder="Digite seu endereco">
 
-            <label for="medicamentos">Medicamentos</label>
-            <input type="text" placeholder="Digite os medicamentos que o paciente faz uso">
+            <label>Medicamentos</label>
+            <input name="medicamentos" type="text" placeholder="Digite os medicamentos que o paciente faz uso">
 
-            <label for="password">Senha</label>
-            <input type="password" placeholder="Digite sua senha" />
+            <label>Senha</label>
+            <input name="password" type="password" placeholder="Digite sua senha" />
 
-            <label for="confPassword">Confirmar senha</label>
-            <input type="password" placeholder="Digite sua senha novamente" />
+            <label>Confirmar senha</label>
+            <input name="confPassword" type="password" placeholder="Digite sua senha novamente" />
 
             <input type="submit" value="Cadastrar" class="btn" href="/" />
         </form>
