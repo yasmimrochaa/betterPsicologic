@@ -11,7 +11,7 @@
 <body>
     <div class="page"">
         <div class=" coluna2">
-        <form action="cadastroPacBD.php" method="POST" class="formCadastro">
+        <form action="database/cadastroPac.php" method="POST" class="formCadastro">
             <h1>Cadastro de Pacientes</h1>
             <p>Digite os dados do Paciente nos campos abaixo.</p>
             <label>Nome completo</label>

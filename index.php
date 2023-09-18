@@ -25,7 +25,7 @@
         <h1 style="padding-top: 150px;">My</h1>
         <h1 style="padding-left: 180px;">Therapy</h1>
     </div>
-    
+    <img src="style/image/cerebro.png" alt="" class="cerebro">
     <h3> Qual a finalidade do projeto?</h3>
     <p>A Finalidade desse software é trazer mais qualidade e praticidade para o profissional, assim terá maior
         controle sobre suas ações, pois ele cadastra um paciente e cria seu prontuário, há também a sua agenda, onde
@@ -37,10 +37,7 @@
         <p>Somos estudantes do IFMG de Ouro Branco e essa proposta foi criada para o Trabalho de Conclusão de Curso
             (TCC).</p> <br><br><br>
         <div class="fotos">
-            <a href="https://instagram.com/anaa_roocha?igshid=MzRlODBiNWFlZA=="><img src="style/image/anaClara.jpeg"
-                    alt=""></a>
-            <a href="https://instagram.com/yasmim.isabela?igshid=MjEwN2IyYWYwYw=="><img src="style/image/yasmim.jpeg"
-                    alt=""></a>
+            <img src="style/image/" alt="">
         </div>
 
     </div>

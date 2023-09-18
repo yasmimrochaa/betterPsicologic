@@ -15,7 +15,7 @@
             <img src="style/image/fundoLog.png" >
         </div>
         <div class="coluna">
-            <form action="loginBD.php" method="POST" class="formLogin">
+            <form action="database/login.php" method="POST" class="formLogin">
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
 
@@ -26,10 +26,9 @@
             <input name="password" type="password" placeholder="Digite sua senha" />
             
             <a href="/">Esqueci minha senha</a>
-            <a href="cadastro.php">Não possuo cadastro</a>
+            <a href="cadastroPsicologo.php">Não possuo cadastro</a>
             <input type="submit" value="Acessar" class="btn" href="/"/>
 
-            
         </form>
         </div>
         

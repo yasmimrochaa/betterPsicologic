@@ -13,7 +13,7 @@
 <body>
     <div class="page">
         <div class="coluna">
-            <form action="cadastropsiBD.php" method="POST" class="formCadastro">
+            <form action="database/cadastroPsi.php" method="POST" class="formCadastro">
             <h1>Cadastro</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
 
@@ -38,7 +38,7 @@
             <label>Confirmar senha</label>
             <input name="confPassword" type="password" placeholder="Digite sua senha novamente" />
 
-            <a href="login.html">Já possuo cadastro</a>
+            <a href="login.php">Já possuo cadastro</a>
 
             <input type="submit" value="Cadastrar" class="btn" href="/"/>
         </form>
