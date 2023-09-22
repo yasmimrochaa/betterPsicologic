@@ -31,11 +31,11 @@
         controle sobre suas ações, pois ele cadastra um paciente e cria seu prontuário, há também a sua agenda, onde
         ele poderá consultar seus horários, que são agendados pelos clientes através da plataforma.
     </p>
-    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
     <div>
         <h3>Quem somos?</h3>
         <p>Somos estudantes do IFMG de Ouro Branco e essa proposta foi criada para o Trabalho de Conclusão de Curso
-            (TCC).</p> <br><br><br>
+            (TCC).</p> <br>
         <div class="fotos">
             <img src="style/image/" alt="">
         </div>

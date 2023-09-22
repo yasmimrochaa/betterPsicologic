@@ -5,15 +5,7 @@ body {
     margin: 0;
     padding: 0;
     color: #000000;
-    background-color: #C8F7F8;
-    background-image: linear-gradient(to left, #377E80, transparent, rgb(255, 255, 255));
-    
 }
-
-img{
-    padding-left: 50px;
-}
-
 
 .page {
     display: flex;

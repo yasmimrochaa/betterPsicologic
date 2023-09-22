@@ -56,7 +56,7 @@
             <ul class="list-unstyled components">
 
                 <li>
-                    <a href="#">Meu Perfil</a>
+                    <a href="meuPerfil.php">Meu Perfil</a>
                 </li>
                 <li>
                     <a href="#">Prontuários</a>
@@ -66,7 +66,7 @@
                     <a href="#"> Minha Agenda</a>
                 </li>
                 <li>
-                    <a href="#">Cadastrar Clientes</a>
+                    <a href="cadastroPaciente.php">Cadastrar Clientes</a>
                 </li>
             </ul>
 

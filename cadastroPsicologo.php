@@ -10,7 +10,7 @@
     
     <title>Realize seu Cadastro</title>
 </head>
-<body>
+<body style="background-image: url(style/image/fundo.png);">
     <div class="page">
         <div class="coluna">
             <form action="cadastroPsiBD.php" method="POST" class="formCadastro">
@@ -38,13 +38,10 @@
             <label>Confirmar senha</label>
             <input name="confPassword" type="password" placeholder="Digite sua senha novamente" />
 
-            <a href="login.php">Já possuo cadastro</a>
+            <a href="loginPsi.php">Já possuo cadastro</a>
 
             <input type="submit" value="Cadastrar" class="btn" href="/"/>
         </form>
-        </div>
-        <div class="coluna">
-            <img src="style/image/fundoCadas.png" alt="">
         </div>
     </div>
 </body>
