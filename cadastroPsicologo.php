@@ -13,7 +13,7 @@
 <body>
     <div class="page">
         <div class="coluna">
-            <form action="database/cadastroPsi.php" method="POST" class="formCadastro">
+            <form action="cadastroPsiBD.php" method="POST" class="formCadastro">
             <h1>Cadastro</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
 

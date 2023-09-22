@@ -8,14 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="style/login.css">
 </head>
-<body>
-    
+<body style="">
     <div class="page" >
         <div class="coluna">
-            <img src="style/image/fundoLog.png" >
-        </div>
-        <div class="coluna">
-            <form action="database/login.php" method="POST" class="formLogin">
+            <form action="loginPsiBD.php" method="POST" class="formLogin">
             <h1>Login</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
 

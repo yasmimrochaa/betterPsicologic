@@ -3,14 +3,6 @@ body {
     padding: 0;
 }
 
-.gradiente {
-    width: 500px;
-    height: 8em;
-    background-color: transparent;
-    background-image: linear-gradient(to left, #84E4E8, transparent, rgb(255, 255, 255));
-}
-
-
 header {
     margin-top: 20px;
     background-color: #84E4E8;
@@ -47,13 +39,8 @@ p {
     padding-left: 50px;
     text-indent: 3ch;
     font-size: 25px;
-    padding-right: 400px;
+    padding-right: 700px;
     position: absolute;
-}
-
-.cerebro{
-    padding-left: 800px;
-    top: 100px;
 }
 
 .socialMedia img {
