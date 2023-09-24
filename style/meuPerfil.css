@@ -8,7 +8,7 @@ body{
     flex-flow: row wrap;
 }
 
-h1 {
+h2 {
     text-align: center;
     padding: 25px;
     padding-left: 550px;
@@ -41,7 +41,7 @@ img{
 
 .foto{
     width: 40%;
-    padding-left: 200px;
+    padding-left: 100px;
     padding-top: 100px;
     padding-bottom: 20px;
     

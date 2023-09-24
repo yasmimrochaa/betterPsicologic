@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <?php
+    require_once("menu.php")
+    ?>
     <div class="page"">
         <div class=" coluna2">
         <form action="cadastroPacBD.php" method="POST" class="formCadastro">

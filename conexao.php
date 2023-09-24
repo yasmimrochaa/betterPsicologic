@@ -8,7 +8,5 @@
 
     if($conn->connect_error){
         die("Falha na conexao com o BD: " . $conn->connect_error);
-    }else{
-        echo 'Banco de dados conectado';
     }
 ?>

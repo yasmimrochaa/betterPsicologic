@@ -1,3 +1,7 @@
+<?php
+include_once("conexao.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,40 +10,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/meuPerfil.css">
-    
+
 </head>
 
 <body>
-        <!-- Conteudo -->
-        <div class="cabeçalho">
-            <h1>- Meu Perfil </h1>
-        </div>
+    <?php
+    require_once("menu.php");
+    ?>
+    <!-- Conteudo -->
+    <div class="cabeçalho">
+        <h2>Meu Perfil</h2>
+    </div>
+
+    <?php
+    $sql = "SELECT * FROM psicologo WHERE 1";
+    $dadosPessoa = $conn->query($sql);
+    if ($dadosPessoa->num_rows > 0) {
+    ?>
         <div class="page">
             <div class="foto">
-                <img src="style/image/yasmim.jpeg" alt="">
+                <img src="style/image/yasmim.JPG" alt="">
             </div>
 
             <div class="about">
                 <form action="" method="get" class="form">
 
                     <label>Nome completo</label>
-                    <input name="nome" type="text" placeholder="Yasmim Isabela Rocha"><br>
+                    <input name="nome" type="text"><br>
 
                     <label>E-mail</label>
-                    <input name="email" type="email" placeholder="yasmimisabela.22@gmail.com" /><br>
+                    <input name="email" type="email" ><br>
 
                     <label>CPF</label>
-                    <input name="cpf" type="text" placeholder="158.995.836-57"><br>
+                    <input name="cpf" type="text"><br>
 
                     <label>Telefone</label>
-                    <input name="telefone" type="tel" placeholder="(31)98820-7028"><br>
+                    <input name="telefone" type="tel" ><br>
 
                     <label>Data de Nascimento</label>
-                    <input name="dataNasc" type="date" placeholder="22/03/2006"><br>
+                    <input name="dataNasc" type="date"><br>
 
                 </form>
             </div>
         </div>
+    <?php
+    while ($exibir = $dadosPessoa->fetch_assoc()) {
+        
+    }
+    }
+    ?>
+
+    
 </body>
 
 </html>

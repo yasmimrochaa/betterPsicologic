@@ -103,22 +103,6 @@
                 </div>
             </nav>
 
-            
-                <center> <h1>Seja Bem Vindo(a)!</h1></center>
-            
-            <br><br>
-            <div>
-                <p class="conteudo">
-                    <center> Primeiramente cadastre um cliente, logo após clique em consultar perfis <br>para
-                        conferir se concluiu o cadastro.
-                        Você poderá realizar o prontuário<br> do paciente com as informações solicitadas e em agenda
-                        você
-                        poderá <br> organizar
-                        seus horários da forma que desejar.<br><br><br>
-                        <img src="style/image/logoBranco.png" alt="">
-                    </center>
-                </p>
-            </div>
 
 
             <!-- jQuery CDN - Slim version (=without AJAX) -->

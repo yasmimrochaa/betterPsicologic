@@ -14,7 +14,7 @@ $resultado = $conn->query($sql);
 if ($resultado->num_rows > 0) {
     $dados_usuario = $resultado->fetch_assoc();
     $_SESSION["email"] = $dados_usuario["email"];
-    header("location: menu.php");
+    header("location: home.php");
 }else{
     ?>
     <script>window.history.back();</script>
