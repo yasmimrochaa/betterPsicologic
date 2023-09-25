@@ -72,11 +72,11 @@
 
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Voltar ao início</a>
+                    <a href="home.php" class="download" href>Voltar ao início</a>
                 </li>
                 <br>
                 <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Sair</a>
+                    <a href="index.php" class="download">Sair</a>
                 </li>
             </ul>
 

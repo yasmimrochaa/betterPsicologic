@@ -9,8 +9,6 @@ include_once("conexao.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/meuPerfil.css">
-
 </head>
 
 <body>
@@ -18,7 +16,7 @@ include_once("conexao.php");
     require_once("menu.php");
     ?>
     <!-- Conteudo -->
-    <div class="cabeçalho">
+    <div class="cabeçalho1">
         <h2>Meu Perfil</h2>
     </div>
 
