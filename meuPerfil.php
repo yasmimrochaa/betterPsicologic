@@ -8,6 +8,7 @@ include_once("conexao.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/meuPerfil.css">
     <title>Document</title>
 </head>
 
@@ -16,9 +17,12 @@ include_once("conexao.php");
     require_once("menu.php");
     ?>
     <!-- Conteudo -->
-    <div class="cabeçalho1">
+    <center>
+       
         <h2>Meu Perfil</h2>
-    </div>
+
+    </center>
+    
 
     <?php
     $sql = "SELECT * FROM psicologo WHERE 1";

@@ -59,7 +59,7 @@
                     <a href="meuPerfil.php">Meu Perfil</a>
                 </li>
                 <li>
-                    <a href="#">Prontuários</a>
+                    <a href="prontuario.php">Prontuários</a>
 
                 </li>
                 <li>
@@ -96,7 +96,7 @@
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
+                        
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     </div>

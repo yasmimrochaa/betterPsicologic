@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/cadastroPac.css">
     <title>Document</title>
 </head>
 
@@ -12,7 +13,7 @@
     require_once("menu.php")
     ?>
     <div class="page"">
-        <div class=" coluna2">
+        <div class="coluna">
         <form action="cadastroPacBD.php" method="POST" class="formCadastro">
             <h1>Cadastro de Pacientes</h1>
             <p>Digite os dados do Paciente nos campos abaixo.</p>
