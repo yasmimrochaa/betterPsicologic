@@ -7,21 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/prontuario.css">
+        <title>Document</title>
 </head>
 
 <body>
     <?php
     require_once("menu.php")
     ?>
-    <h1 style="text-align: center;"> Pacientes Cadastrados</h1>
+    <h2 style="text-align: center; padding: 30px;" > Pacientes Cadastrados</h2> 
+
+    <div class="search-box">
+        <input type="text" class="search-text" placeholder="Pesquisar...">
+        <a class="search-btn">
+            <img class="user-loupe" src="style/image/pesquisarUsuario.png" alt="" width="25px" height="25px">
+            <img class="loupe" src="style/image/pesquisar.png" alt="" width="25px" height="25px">
+        </a>
+    </div>
+
+    <br><br><br>
+
     <table class="table table-striped table-hover table-bordered ">
         <thead>
 
             <tr style="background-color: #b5ebec">
-                <th>ID</th>
-                <th>Nome Fornecedor</th>
-                <th class="d-none d-sm-table-cell">Contato</th>
+                <th>Codigo</th>
+                <th>Nome</th>
+                <th>CPF</th>
                 <th class="d-none d-lg-table-cell">Telefone</th>
                 <th width="120" class="text-center">Ações</th>
             </tr>
@@ -30,7 +42,7 @@
             <tr>
                 <td>yasmim</td>
                 <td>yasmim isabela rocha</td>
-                <td class="d-none d-sm-table-cell">31...</td>
+                <td class="d-none d-sm-table-cell">31988207028</td>
                 <td class="d-none d-lg-table-cell">000</td>
 
                 <td>

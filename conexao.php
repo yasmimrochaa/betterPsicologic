@@ -1,7 +1,7 @@
 <?php
     define('HOST', 'localhost');
-    define('USER', 'root');
-    define('PASSWORD', '');
+    define('USER', 'administrador');
+    define('PASSWORD', 'Pontocego22');
     define('DB', 'mytherapy');
 
     $conn = new mysqli(HOST, USER, PASSWORD, DB);
