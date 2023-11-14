@@ -1,3 +1,7 @@
+<?php
+include_once("conexao.php");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -98,8 +102,6 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                         
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    </div>
                 </div>
             </nav>
 
