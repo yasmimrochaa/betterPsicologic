@@ -21,7 +21,7 @@ include_once("conexao.php");
 
 
     <div class="container-xl px-4 mt-4">
-
+        <h2 style="text-align: center; padding-bottom: 25px;"> Meu Perfil </h2>
         <div class="row">
 
             <div class="col-xl-4">
@@ -34,16 +34,16 @@ include_once("conexao.php");
 
                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
 
-                        <label for="arquivo">Enviar arquivo</label>
-                        <input type="file" accept="image/png, image/jpeg" name="arquivo">
-
-                        <button class="btn" type="button">Carregar nova imagem</button>
+                        <button class="btn">
+                            <label for="arquivo">Carregar nova imagem</label>
+                            <input type="file" name="arquivo" id="arquivo">
+                        </button>
                     </div>
                     <button class="btn">Confirmar</button>
 
                 </div>
-                <button class="btn" type="button" style="background-color: rgb(228, 120, 93); margin-top: 25px;"> 
-                Deletar Perfil
+                <button class="btn" type="button" style="background-color: rgb(228, 120, 93); margin-top: 25px;">
+                    Deletar Perfil
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                         <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
                     </svg>

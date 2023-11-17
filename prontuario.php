@@ -27,7 +27,7 @@ include_once("conexao.php");
     <?php
     require_once("menu.php")
     ?>
-    <h2 style="text-align: center; padding-bottom: 30px;"> Pacientes Cadastrados</h2>
+    <h2 style="text-align: center; padding-bottom: 10px;"> Pacientes Cadastrados</h2>
 
     <div class="search-box">
         <input type="text" class="search-text" placeholder="Insira o nome do paciente...">
