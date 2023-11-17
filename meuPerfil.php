@@ -9,6 +9,7 @@ include_once("conexao.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/meuPerfil.css">
+
     <title>Document</title>
 </head>
 
@@ -17,9 +18,12 @@ include_once("conexao.php");
     require_once("menu.php")
     ?>
 
+
+
     <div class="container-xl px-4 mt-4">
-        <hr class="mt-0 mb-4">
+
         <div class="row">
+
             <div class="col-xl-4">
 
                 <div class="card mb-4 mb-xl-0">
@@ -35,8 +39,17 @@ include_once("conexao.php");
 
                         <button class="btn" type="button">Carregar nova imagem</button>
                     </div>
+                    <button class="btn">Confirmar</button>
+
                 </div>
+                <button class="btn" type="button" style="background-color: rgb(228, 120, 93); margin-top: 25px;"> 
+                Deletar Perfil
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                    </svg>
+                </button>
             </div>
+
             <div class="col-xl-8">
 
                 <div class="card mb-4">
@@ -71,10 +84,9 @@ include_once("conexao.php");
                                     <input class="form-control" id="inputBirthday" type="date" name="birthday" placeholder="Insira sua data de nascimento" value="06/10/1988">
                                 </div>
                             </div>
-
-                            <button class="btn" type="button">Salvar alterações</button>
                         </form>
                     </div>
+                    <button class="btn" type="button">Salvar alterações</button>
                 </div>
             </div>
         </div>

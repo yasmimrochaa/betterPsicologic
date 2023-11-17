@@ -76,6 +76,12 @@ body {
     border-color: #97C8CD;
 }
 
+.delete{
+    color: #fff;
+    background-color: rgb(228, 120, 93);
+    border-color: rgb(228, 120, 93);
+}
+
 input[type="file"]{
     display: none;
 }
@@ -84,3 +90,4 @@ label{
     text-transform: uppercase;
     display: block;
 }
+
