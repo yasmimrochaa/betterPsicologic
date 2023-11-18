@@ -17,8 +17,9 @@
 
     <main>
         <form action="cadastroPacBD.php" method="POST" class="formCadastro">
-            
-            <p>Digite os dados do Paciente nos campos abaixo.</p>
+
+            <p style="margin-bottom: 5px; text-align: center;">Digite os dados do Paciente nos campos abaixo.</p>
+
             <label>Nome completo</label>
             <input name="nome" text" placeholder="Digite seu nome completo" autofocus="true" required>
 
@@ -53,9 +54,20 @@
             <label>Confirmar senha</label>
             <input name="confPassword" type="password" placeholder="Digite sua senha novamente" required />
 
-            <button type="submit" href="/"> Cadastrar </button>
-            
+            <button class="btn" type="submit" href="/" style="margin-top: 20px;"> Cadastrar </button>
+
         </form>
-    </main </body>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('input[name=telefone]').mask('(00)0 0000-0000');
+            $('input[name=cpf]').mask('000.000.000-00')
+        })
+    </script>
+</body>
+
 
 </html>

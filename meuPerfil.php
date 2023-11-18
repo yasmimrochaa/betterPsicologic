@@ -8,8 +8,7 @@ include_once("conexao.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/meuPerfil.css">
-
+    <link rel="stylesheet" href="style/meuperfil.css">
     <title>Document</title>
 </head>
 
@@ -36,7 +35,7 @@ include_once("conexao.php");
 
                         <button class="btn"> 
                             <label for="arquivo">Carregar nova imagem</label>
-                            <input type="file" name="arquivo" id="arquivo">
+                            <input type="file" name="arquivo" id="arquivo" accept="image/png, image/jpeg">
                         </button>
                     </div>
                     <button class="btn" >Confirmar</button>

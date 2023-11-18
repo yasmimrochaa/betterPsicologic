@@ -97,11 +97,7 @@ include_once("conexao.php");
                         <i class="fas fa-align-left"></i>
 
                     </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        
-                    </button>
+                    <label for="" style="color: #17a2b8;">Seja Bem vindo(a): Yasmim</label>
                 </div>
             </nav>
 
