@@ -30,16 +30,16 @@ include_once("conexao.php");
                     <div class="card-header">Foto de Perfil </div>
                     <div class="card-body text-center">
 
-                        <img class="img-account-profile rounded-circle mb-2" src="style/image/user.png" alt>
+                        <img class="img-account-profile rounded-circle mb-2" src="style/image/user.png"  alt>
 
                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
 
-                        <button class="btn">
+                        <button class="btn"> 
                             <label for="arquivo">Carregar nova imagem</label>
                             <input type="file" name="arquivo" id="arquivo">
                         </button>
                     </div>
-                    <button class="btn">Confirmar</button>
+                    <button class="btn" >Confirmar</button>
 
                 </div>
                 <button class="btn" type="button" style="background-color: rgb(228, 120, 93); margin-top: 25px;">

@@ -1,100 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     color: #000000;
     background-color: #C8F7F8;
 }
 
-.page {
-    display: flex;
-    flex-flow: row wrap;
-}
 
-
-.coluna{
-    padding-left: 150px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.formCadastro {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.911);
-    border-radius: 7px;
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
     padding: 40px;
-    box-shadow: 10px 10px 40px rgba(33, 107, 126, 0.548);
-    gap: 5px
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
-.formCadastro h1 {
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    font-weight: 600;
-    font-size: 2.3em;
+form {
+    display: grid;
+    gap: 10px;
+    border-radius: 5px;
 }
 
-.formCadastro p {
-    display: inline-block;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 20px;
+input,
+select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #69707a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c5ccd6;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.35rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.formCadastro input {
-    padding: 12px;
-    font-size: 12px;
-    background-color: #C8F7F8;
-    border: 1px solid #C8F7F8;
-    margin-bottom: 18px;
-    margin-top: 3px;
-    border-radius: 2px;
-    transition: all linear 160ms;
-    outline: none;
+label{
+    margin-top: 20px;
+    font-size: 14x;
 }
 
-
-.formCadastro input:focus {
-    border: 1px solid #0097B2;
-}
-
-.formCadastro label {
-    font-size: 12px;
-    font-weight: 500;
-}
-
-.formCadastro a {
-    text-align: end;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 13px;
-    color: #555;
-    transition: all linear 160ms;
-}
-
-.formCadastro a:hover {
-    color: #259B9F;
-}
-
-.btn {
-    background-color: #259B9F;
+button {
+    background-color: #97C8CD;
     color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none !important;
-    transition: all linear 160ms;
+    padding: 10px;
+    border: none;
     cursor: pointer;
-    margin: 0 !important;
-
 }
 
-.btn:hover {
-    transform: scale(1.05);
-    background-color:#259B9F;
-
+button:hover {
+    background-color: #97C8CD;
 }

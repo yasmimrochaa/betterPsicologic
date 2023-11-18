@@ -6,14 +6,14 @@ $email = $_POST["email"];
 $cpf = $_POST["cpf"];
 $telefone = $_POST["telefone"];
 $dataNasc = $_POST["dataNasc"];
-$genero = $_POST["genero"];
+$genero = $_POST["sexo"];
 $endereco = $_POST["endereco"];
 $medicamentos = $_POST["medicamentos"];
 $senha = $_POST["password"];
 
-$sql = "INSERT INTO paciente(cpf, nome, senha, email, telefone, dataNasc, genero, endereco, medicamentos)
+$sql = "INSERT INTO paciente(cpf, nome, senha, email, telefone, dataNasc, sexo, endereco, medicamentos)
                  VALUES ('$cpf', '$nome', '$senha', '$email', '$telefone', 
-                        '$dataNasc', '$genero', '$endereco', '$medicamentos')";
+                        '$dataNasc', '$sexo', '$endereco', '$medicamentos')";
 
 echo $sql;
 

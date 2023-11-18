@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="style/cadastroPac.css">
     <title>Document</title>
 </head>
 
@@ -12,45 +12,50 @@
     <?php
     require_once("menu.php")
     ?>
-    <div class="page"">
-        <div class="coluna">
+
+    <h1 style="text-align: center;">Cadastro de Pacientes</h1>
+
+    <main>
         <form action="cadastroPacBD.php" method="POST" class="formCadastro">
-            <h1>Cadastro de Pacientes</h1>
+            
             <p>Digite os dados do Paciente nos campos abaixo.</p>
             <label>Nome completo</label>
-            <input name="nome" text" placeholder="Digite seu nome completo" autofocus="true">
+            <input name="nome" text" placeholder="Digite seu nome completo" autofocus="true" required>
 
             <label>E-mail</label>
-            <input name="email" type="email" placeholder="Digite seu e-mail" />
+            <input name="email" type="email" placeholder="Digite seu e-mail" required>
 
             <label>CPF</label>
-            <input name="cpf" type="text" placeholder="Digite seu cpf">
+            <input name="cpf" type="text" placeholder="Digite seu cpf" required>
 
             <label>Telefone</label>
-            <input name="telefone" type="text" placeholder="Digite seu telefone">
+            <input name="telefone" type="text" placeholder="Digite seu telefone" required>
 
             <label>Data de Nasciemnto</label>
-            <input name="dataNasc" type="date">
+            <input name="dataNasc" type="date" required>
 
-            <label>Gênero</label>
-            <input name="genero" type="text" placeholder="Digite seu gênero">
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+            </select>
 
             <label>Endereço</label>
-            <input name="endereco" type="text" placeholder="Digite seu endereco">
+            <input name="endereco" type="text" placeholder="Digite seu endereco" required>
 
             <label>Medicamentos</label>
-            <input name="medicamentos" type="text" placeholder="Digite os medicamentos que o paciente faz uso">
+            <input name="medicamentos" type="text" placeholder="Digite os medicamentos que o paciente faz uso" required>
 
             <label>Senha</label>
-            <input name="password" type="password" placeholder="Digite sua senha" />
+            <input name="password" type="password" placeholder="Digite sua senha" required />
 
             <label>Confirmar senha</label>
-            <input name="confPassword" type="password" placeholder="Digite sua senha novamente" />
+            <input name="confPassword" type="password" placeholder="Digite sua senha novamente" required />
 
-            <input type="submit" value="Cadastrar" class="btn" href="/" />
+            <button type="submit" href="/"> Cadastrar </button>
+            
         </form>
-    </div>
-    </div>
-</body>
+    </main </body>
 
 </html>
