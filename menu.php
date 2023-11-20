@@ -97,7 +97,13 @@ include_once("conexao.php");
                         <i class="fas fa-align-left"></i>
 
                     </button>
-                    <label for="" style="color: #17a2b8;">Seja Bem vindo(a): Yasmim</label>
+                    <label for="" style="color: #17a2b8;">Seja Bem vindo(a): 
+                    <?php
+                        session_start();
+                        
+                        echo $_SESSION["nome"];
+                        ?>
+                    </label>
                 </div>
             </nav>
 

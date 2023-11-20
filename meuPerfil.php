@@ -29,16 +29,16 @@ include_once("conexao.php");
                     <div class="card-header">Foto de Perfil </div>
                     <div class="card-body text-center">
 
-                        <img class="img-account-profile rounded-circle mb-2" src="style/image/user.png"  alt>
+                        <img class="img-account-profile rounded-circle mb-2" src="style/image/user.png" id="image" alt>
 
                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
 
-                        <button class="btn"> 
+                        <button class="btn">
                             <label for="arquivo">Carregar nova imagem</label>
                             <input type="file" name="arquivo" id="arquivo" accept="image/png, image/jpeg">
                         </button>
                     </div>
-                    <button class="btn" >Confirmar</button>
+                    <button class="btn">Confirmar</button>
 
                 </div>
                 <button class="btn" type="button" style="background-color: rgb(228, 120, 93); margin-top: 25px;">
@@ -92,8 +92,17 @@ include_once("conexao.php");
     </div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript">
-
+    <script type="text/javascript"></script>
+    <script>
+        let photo = document.getElementById('image');
+        let file = document.getElementById('arquivo');
+        file.addEventListener('change', (event) => {
+            let reader = new FileReader();
+            reader.onload = () => {
+                photo.src = reader.result;
+            }
+            reader.readAsDataURL(file.files[0]);
+        });
     </script>
 </body>
 

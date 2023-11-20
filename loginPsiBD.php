@@ -13,7 +13,10 @@ $sql = "SELECT *
 $resultado = $conn->query($sql);
 if ($resultado->num_rows > 0) {
     $dados_usuario = $resultado->fetch_assoc();
+    $_SESSION["cod"] = $dados_usuario["cod"];
     $_SESSION["email"] = $dados_usuario["email"];
+    $_SESSION["nome"] = $dados_usuario["nome"];
+
     header("location: home.php");
 }else{
     ?>

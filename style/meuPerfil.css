@@ -7,7 +7,8 @@ body {
 }
 
 .img-account-profile {
-    height: 10rem;
+    width: 300px;
+    height: 300px;
 }
 
 .rounded-circle {

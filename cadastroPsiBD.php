@@ -7,8 +7,9 @@
     $telefone = $_POST["telefone"];
     $dataNasc = $_POST["dataNasc"];
     $senha = $_POST["password"];
+    $img = 'style/image/user.png';
 
-    $sql = "INSERT INTO psicologo (cpf, nome, senha, email, telefone, dataNasc) 
-            VALUES ('$cpf', '$nome', '$senha', '$email', '$telefone', '$dataNasc')";
+    $sql = "INSERT INTO psicologo (cpf, nome, senha, email, telefone, dataNasc, img) 
+            VALUES ('$cpf', '$nome', '$senha', '$email', '$telefone', '$dataNasc', $img)";
 
 ?>
