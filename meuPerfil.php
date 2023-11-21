@@ -25,75 +25,80 @@ include_once("conexao.php");
 
             <div class="col-xl-4">
 
-                <div class="card mb-4 mb-xl-0">
-                    <div class="card-header">Foto de Perfil </div>
-                    <div class="card-body text-center">
+                <form action="uploadImg.php" method="post" enctype="multipart/form-data">
+                    <div class="card mb-4 mb-xl-0">
 
-                        <img class="img-account-profile rounded-circle mb-2" src="style/image/user.png" id="image" alt>
+                        <div class="card-header">Foto de Perfil </div>
 
-                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                        <div class="card-body text-center">
+                            <img class="rounded-circle mb-2" src="style/image/user.png" id="image" style="width: 200px; height:auto;">
+                            <!-- implementar um select do banco para obter a img -->
+                            <div class="small font-italic text-muted mb-4">JPG ou PNG de até 5 MB</div>
 
-                        <button class="btn">
+
                             <label for="arquivo">Carregar nova imagem</label>
-                            <input type="file" name="arquivo" id="arquivo" accept="image/png, image/jpeg">
-                        </button>
-                    </div>
-                    <button class="btn">Confirmar</button>
+                            <input type="file" name="upload" id="upload" accept="image/png, image/jpg">
 
-                </div>
-                <button class="btn" type="button" style="background-color: rgb(228, 120, 93); margin-top: 25px;">
-                    Deletar Perfil
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                    </svg>
-                </button>
+                        </div>
+                        <button class="btn btn-success" type="submit" name="upload">Confirmar</button>
+
+                </form>
             </div>
 
-            <div class="col-xl-8">
+            <button class="btn btn-danger" type="button" style="margin-top: 25px;">
+                Deletar Perfil
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                    <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                </svg>
+            </button>
+        </div>
 
-                <div class="card mb-4">
-                    <div class="card-header">Detalhes da conta</div>
-                    <div class="card-body">
-                        <form>
+        <div class="col-xl-8">
 
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputUsername">Nome</label>
-                                <input class="form-control" id="inputUsername" type="text" placeholder="Insira seu nome completo" value="username">
+            <div class="card mb-4">
+                <div class="card-header">Detalhes da conta</div>
+                <div class="card-body">
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Nome</label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Insira seu nome completo" value="username">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">CPF</label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Insira seu CPF" value="123.456.789-10">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Email</label>
+                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Insira seu email" value="name@example.com">
+                        </div>
+
+                        <div class="row gx-3 mb-3">
+
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Telefone</label>
+                                <input class="form-control" id="inputPhone" type="tel" placeholder="Insira seu número de telefone" value="555-123-4567">
                             </div>
 
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputUsername">CPF</label>
-                                <input class="form-control" id="inputUsername" type="text" placeholder="Insira seu CPF" value="123.456.789-10">
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputBirthday">Data de nascimento</label>
+                                <input class="form-control" id="inputBirthday" type="date" name="birthday" placeholder="Insira sua data de nascimento" value="06/10/1988">
                             </div>
-
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Insira seu email" value="name@example.com">
-                            </div>
-
-                            <div class="row gx-3 mb-3">
-
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputPhone">Telefone</label>
-                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Insira seu número de telefone" value="555-123-4567">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputBirthday">Data de nascimento</label>
-                                    <input class="form-control" id="inputBirthday" type="date" name="birthday" placeholder="Insira sua data de nascimento" value="06/10/1988">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <button class="btn" type="button">Salvar alterações</button>
+                        </div>
+                    </form>
                 </div>
+                <button class="btn" type="button">Salvar alterações</button>
             </div>
         </div>
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript"></script>
     <script>
+        /*
         let photo = document.getElementById('image');
         let file = document.getElementById('arquivo');
         file.addEventListener('change', (event) => {
@@ -103,6 +108,7 @@ include_once("conexao.php");
             }
             reader.readAsDataURL(file.files[0]);
         });
+        */
     </script>
 </body>
 
