@@ -16,6 +16,9 @@ if ($resultado->num_rows > 0) {
     $_SESSION["cod"] = $dados_usuario["cod"];
     $_SESSION["email"] = $dados_usuario["email"];
     $_SESSION["nome"] = $dados_usuario["nome"];
+    $_SESSION["cpf"] = $dados_usuario["cpf"];
+    $_SESSION["telefone"] = $dados_usuario["telefone"];
+    $_SESSION["dataNasc"] = $dados_usuario["dataNasc"];
 
     header("location: home.php");
 }else{

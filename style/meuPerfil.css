@@ -73,10 +73,7 @@ body {
 
 .btn {
     color: #fff;
-    background-color: #97C8CD;
-    border-color: #97C8CD;
+    background-color: #259B9F;
+    border-color: #259B9F;
 }
 
-input[type="file"] {
-    display: none;
-}
