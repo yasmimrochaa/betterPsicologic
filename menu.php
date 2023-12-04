@@ -67,10 +67,13 @@ include_once("conexao.php");
 
                 </li>
                 <li>
-                    <a href="#"> Minha Agenda</a>
+                    <a href="agendapsi.php"> Minha Agenda</a>
                 </li>
                 <li>
                     <a href="cadastroPaciente.php">Cadastrar Clientes</a>
+                </li>
+                <li>
+                    <a href="faleConosco.php">Fale conosco</a>
                 </li>
             </ul>
 

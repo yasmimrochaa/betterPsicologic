@@ -8,7 +8,7 @@
         while ($exibir = $result->fetch_assoc()){
             ?>
             <div class="exibir">
-            <img src=uploads/<?php echo $exibir["img"]?>> 
+            <img style="width: 200px; height: 230px; border-radius: 50%;" src=uploads/<?php echo $exibir["img"]?> > 
             </div>
             <?php
         }         

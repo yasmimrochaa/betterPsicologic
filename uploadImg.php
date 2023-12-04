@@ -46,7 +46,7 @@ if (isset($_POST["upload"])) {
     foreach($msg as $value){
         echo $value ."<br>";
     }
-    //header("Location: meuPerfil.php");
+    header("Location: meuPerfil.php");
 }
 
 ?>

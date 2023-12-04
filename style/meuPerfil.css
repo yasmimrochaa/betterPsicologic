@@ -6,14 +6,13 @@ body {
     color: #69707a;
 }
 
-.img-account-profile {
+img{
     width: 180px;
     height: 2180px;
+    border-radius: 50% !important
 }
 
-.rounded-circle {
-    border-radius: 50% !important;
-}
+
 
 .card {
     box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
@@ -76,4 +75,6 @@ body {
     background-color: #259B9F;
     border-color: #259B9F;
 }
+
+
 

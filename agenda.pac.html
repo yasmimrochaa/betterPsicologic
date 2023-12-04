@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylepac.css">
+    <title>Agendamento Paciente</title>
+</head>
+<body>
+    <div class="calendar">
+
+			<div class="col leftCol">
+				<div class="content">
+					<h1 class="date">Setembro<span>Sexta dia 12</span></h1>
+					<div class="notes">
+						<p>
+							<input type="text" value="" placeholder="Horários Disponíveis"/>
+							<a href="#" title="Add note" class="addNote animate">+</a>
+						</p>
+						<ul class="noteList">
+							<li>Agendar<a href="#" title="Remove note" class="removeNote animate">x</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col rightCol">
+				<div class="content">
+					<h2 class="year">2023</h2>
+					<ul class="months">
+						<li><a href="#" title="Jan" data-value="1">Jan</a></li>
+						<li><a href="#" title="Feb" data-value="2">Fev</a></li>
+						<li><a href="#" title="Mar" data-value="3">Mar</a></li>
+						<li><a href="#" title="Apr" data-value="4">Abr</a></li>
+						<li><a href="#" title="May" data-value="5">Mai</a></li>
+						<li><a href="#" title="Jun" data-value="6">Jun</a></li>
+						<li><a href="#" title="Jul" data-value="7">Jul</a></li>
+						<li><a href="#" title="Aug" data-value="8">Ago</a></li>
+						<li><a href="#" title="Sep" data-value="9" class="selected">Set</a></li>
+						<li><a href="#" title="Oct" data-value="10">Out</a></li>
+						<li><a href="#" title="Nov" data-value="11">Nov</a></li>
+						<li><a href="#" title="Dec" data-value="12">Dez</a></li>
+					</ul>
+					<div class="clearfix"></div>
+					<ul class="weekday">
+						<li><a href="#" title="Mon" data-value="1">Seg</a></li>
+						<li><a href="#" title="Tue" data-value="2">Ter</a></li>
+						<li><a href="#" title="Wed" data-value="3">Qua</a></li>
+						<li><a href="#" title="Thu" data-value="4">Qui</a></li>
+						<li><a href="#" title="Fri" data-value="5">Sex</a></li>
+						<li><a href="#" title="Say" data-value="6">Sab</a></li>
+						<li><a href="#" title="Sun" data-value="7">Dom</a></li>
+					</ul>
+					<div class="clearfix"></div>
+					<ul class="days">
+						<script>
+							for( var _i = 1; _i <= 31; _i += 1 ){
+								var _addClass = '';
+								if( _i === 12 ){ _addClass = ' class="selected"'; }
+								
+								switch( _i ){
+									case 8:
+									case 10:
+									case 27:
+										_addClass = ' class="event"';
+									break;
+								}
+
+								document.write( '<li><a href="#" title="'+_i+'" data-value="'+_i+'"'+_addClass+'>'+_i+'</a></li>' );
+							}
+						</script>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+
+		</div>
+</body>
+</html>

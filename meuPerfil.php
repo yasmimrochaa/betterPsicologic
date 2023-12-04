@@ -35,10 +35,12 @@ include_once("conexao.php");
                             <!-- implementar um select do banco para obter a img -->
                             <div class="small font-italic text-muted mb-4">JPG ou PNG de até 5 MB</div>
 
-                            <button>
-                                <label for="arquivo">Carregar nova imagem</label>
-                                <input type="file" name="upload" id="upload" accept="image/png, image/jpg">
-                            </button>
+                            <div>
+                                <label for="upload"></label>
+                                <input type="file" name="upload" id="upload" accept="image/png, image/jpeg, image/jpg">
+                            </div>
+                            
+                            
 
 
                         </div>
@@ -98,15 +100,15 @@ include_once("conexao.php");
     </div>
     <script>
         function confirmarExclusao(cod) {
-            if (window.confirm("Deseja confirmar a exclusão?")){
+            if (window.confirm("Deseja confirmar a exclusão?")) {
                 window.location = "excluirPerfil.php?cod" + cod;
             }
         }
-    </script>       
+    </script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript"></script>
-    
+
 </body>
 
 </html>

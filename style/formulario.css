@@ -22,7 +22,7 @@ form {
     border-radius: 5px;
 }
 
-input{
+input, textarea, select{
     display: block;
     width: 100%;
     padding: 10px;
@@ -46,13 +46,9 @@ label{
 }
 
 .btn{
-    background-color: #97C8CD;
+    background-color: #259B9F;
     color: #fff;
     padding: 10px;
     border: none;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #97C8CD;
 }
