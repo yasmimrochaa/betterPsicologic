@@ -13,7 +13,7 @@
     require_once("menu.php")
     ?>
 
-    <h1 style="text-align: center;">Cadastro de Pacientes</h1>
+    <h2 style="text-align: center;">Cadastro de Pacientes</h2>
 
     <main>
         <form action="cadastroPacBD.php" method="POST" class="formCadastro">

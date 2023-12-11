@@ -83,7 +83,10 @@ include_once("conexao.php");
                 </li>
                 <br>
                 <li>
-                    <a href="index.php" class="download">Sair</a>
+                    <a href="index.php" class="download" >Sair</a>
+                    <?php
+                    session_destroy();
+                    ?>
                 </li>
             </ul>
 

@@ -14,7 +14,7 @@ include_once("conexao.php");
 
 <body>
     <?php
-    require_once("menu.php")
+    require_once("menuPac.php");
     ?>
 
     <div class="container-xl px-4 mt-4">
@@ -29,6 +29,7 @@ include_once("conexao.php");
                         <div class="card-header">Foto de Perfil </div>
 
                         <div class="card-body text-center">
+                            <!-- MUDAR -->
                             <?php include_once("exibirImg.php"); ?>
                             <!-- implementar um select do banco para obter a img -->
                             <div class="small font-italic text-muted mb-4">JPG ou PNG de até 5 MB</div>

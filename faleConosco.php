@@ -7,7 +7,6 @@ include_once("conexao.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fale conosco</title>
     <link rel="stylesheet" href="style/formulario.css">
     <style>
         body {
@@ -33,7 +32,7 @@ include_once("conexao.php");
     require_once("menu.php")
     ?>
 
-    <h1 style="text-align: center;">Fale conosco</h1>
+    <h2 style="text-align: center;">Fale conosco</h2>
 
     <main>
         <form>

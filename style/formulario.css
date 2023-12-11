@@ -25,8 +25,7 @@ form {
 input, textarea, select{
     display: block;
     width: 100%;
-    padding: 10px;
-    font-size: 0.875rem;
+    font-size: 12px;
     font-weight: 400;
     line-height: 1;
     color: #69707a;
@@ -42,7 +41,7 @@ input, textarea, select{
 
 label{
     margin-top: 20px;
-    font-size: 14x;
+    font-size: 12x;
 }
 
 .btn{
