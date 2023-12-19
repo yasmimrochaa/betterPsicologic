@@ -67,17 +67,14 @@ include_once("conexao.php");
                     <a href=""> Agendar um Horario</a>
                 </li>
                 <li>
-                    <a href="">Fale conosco</a>
+                    <a href="faleConosco.php">Fale conosco</a>
                 </li>
             </ul>
 
             <ul class="list-unstyled CTAs">
-                <li>
-                    <a href="home.php" class="download" href>Voltar ao início</a>
-                </li>
                 <br>
                 <li>
-                    <a href="index.php" class="download">Sair</a>
+                    <a href="sair.php" class="download">Sair</a>
                 </li>
             </ul>
 
@@ -97,7 +94,6 @@ include_once("conexao.php");
                     <label for="" style="color: #17a2b8;">Seja Bem vindo(a): 
                     <?php
                         session_start();
-                        
                         echo $_SESSION["nome"];
                         ?>
                     </label>

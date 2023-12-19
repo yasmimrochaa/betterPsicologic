@@ -16,10 +16,10 @@
             <p>Digite os seus dados de acesso no campo abaixo.</p>
 
             <label>E-mail</label>
-            <input name="email" type="email" placeholder="Digite seu e-mail" autofocus="true" />
+            <input name="email" type="email" placeholder="Digite seu e-mail" autofocus="true" require />
 
             <label>Senha</label>
-            <input name="password" type="password" placeholder="Digite sua senha" />
+            <input name="password" type="password" placeholder="Digite sua senha" require />
             
             <a href="/">Esqueci minha senha</a>
             <a href="cadastroPsicologo.php">Não possuo cadastro</a>

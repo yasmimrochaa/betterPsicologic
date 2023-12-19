@@ -1,5 +1,6 @@
 <?php
 include_once("conexao.php");
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -7,6 +8,7 @@ include_once("conexao.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style/formulario.css">
     <style>
         body {
@@ -25,11 +27,16 @@ include_once("conexao.php");
             border-radius: 5px;
         }
 
+        input{
+            padding: 10px;
+        }
+
     </style>
 </head>
 <body>
 <?php
-    require_once("menu.php")
+    if (isset($_SESSION["email"])) {
+        require_once("menu.php");
     ?>
 
     <h2 style="text-align: center;">Fale conosco</h2>
@@ -53,5 +60,17 @@ include_once("conexao.php");
             <button type="submit" class="btn">Enviar</button>
         </form>
     </main>
+
+    <?php
+    } else {
+    ?>
+        <br>
+        <div class="alert alert-warning">
+            <p>Usuário não autenticado!</p>
+            <a href="index.php">Realize o login</a>
+        </div>
+    <?php
+    }
+    ?>
 </body>
 </html>

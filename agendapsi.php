@@ -1,5 +1,6 @@
 <?php
 include_once("conexao.php");
+session_start();
 ?>
 
 <!doctype html>
@@ -9,6 +10,7 @@ include_once("conexao.php");
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
@@ -31,7 +33,8 @@ include_once("conexao.php");
 
 <body>
   <?php
-    require_once("menu.php")
+    if (isset($_SESSION["email"])) {
+      require_once("menu.php");
   ?>
 
   <div class="content">
@@ -121,6 +124,18 @@ include_once("conexao.php");
   </script>
 
   <script src="js/main.js"></script>
+
+  <?php
+    } else {
+    ?>
+        <br>
+        <div class="alert alert-warning">
+            <p>Usuário não autenticado!</p>
+            <a href="index.php">Realize o login</a>
+        </div>
+    <?php
+    }
+    ?>
 </body>
 
 </html>

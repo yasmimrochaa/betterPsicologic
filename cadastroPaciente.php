@@ -1,22 +1,33 @@
+<?php
+include_once("conexao.php");
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style/formulario.css">
     <title>Document</title>
+    <style>
+        input{
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <?php
-    require_once("menu.php")
+    if (isset($_SESSION["email"])) {
+        require_once("menu.php");
     ?>
 
     <h2 style="text-align: center;">Cadastro de Pacientes</h2>
 
     <main>
-        <form action="cadastroPacBD.php" method="POST" class="formCadastro">
+        <form action="cadastroPacBD.php" method="POST">
 
             <p style="margin-bottom: 5px; text-align: center;">Digite os dados do Paciente nos campos abaixo.</p>
 
@@ -67,6 +78,18 @@
             $('input[name=cpf]').mask('000.000.000-00')
         })
     </script>
+
+<?php
+    } else {
+    ?>
+        <br>
+        <div class="alert alert-warning">
+            <p>Usuário não autenticado!</p>
+            <a href="index.php">Realize o login</a>
+        </div>
+    <?php
+    }
+    ?>
 </body>
 
 

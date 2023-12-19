@@ -2,12 +2,12 @@
 require_once("conexao.php");
 session_start();
 
-$email = $conn->real_escape_string($_POST["email"]);
+$usuario = $conn->real_escape_string($_POST["email"]);
 $senha = $_POST["password"];
 
 $sql = "SELECT * 
             from psicologo 
-            where email = '$email' and 
+            where email = '$usuario' and 
                   senha = '$senha' ";
 
 $resultado = $conn->query($sql);

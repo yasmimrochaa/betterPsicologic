@@ -1,5 +1,8 @@
 <?php
 include_once("conexao.php");
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -83,10 +86,7 @@ include_once("conexao.php");
                 </li>
                 <br>
                 <li>
-                    <a href="index.php" class="download" >Sair</a>
-                    <?php
-                    session_destroy();
-                    ?>
+                    <a href="sair.php" class="download" >Sair</a>
                 </li>
             </ul>
 
@@ -105,7 +105,6 @@ include_once("conexao.php");
                     </button>
                     <label for="" style="color: #17a2b8;">Seja Bem vindo(a): 
                     <?php
-                        session_start();
                         
                         echo $_SESSION["nome"];
                         ?>
