@@ -10,132 +10,124 @@ session_start();
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
 
-
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-  <link href='fullcalendar/packages/core/main.css' rel='stylesheet' />
-  <link href='fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
-
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-
-  <!-- Style -->
-  <link rel="stylesheet" href="css/stylepsi.css">
-
+  <link rel="stylesheet" href="style/calendario.css">
   <title>Agenda Prossifional</title>
+
 </head>
 
 <body>
   <?php
-    if (isset($_SESSION["email"])) {
-      require_once("menu.php");
+  if (isset($_SESSION["email"])) {
+    require_once("menu.php");
   ?>
 
-  <div class="content">
-    <div id='calendar'></div>
-  </div>
+    <h2 style="text-align: center; padding-bottom: 30px;"> Agenda </h2>
+
+    <div id='calendar' class="fc fc-media-screen fc-direction-ltr fc-theme-standard"></div>
+
+    <!-- Modal Visualizar -->
+    <div class="modal fade" id="visualizarModal" tabindex="-1" aria-labelledby="visualizarModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="visualizarModalLabel">Visualizar o Evento </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="visualizarEvento">
+              <dl class="row">
+                <dt class="col-sm-3">ID: </dt>
+                <dd class="col-sm-9" id="visualizar_id"></dd>
+                <dt class="col-sm-3">Nome do paciente: </dt>
+                <dd class="col-sm-9" id="visualizar_title"></dd>
+                <dt class="col-sm-3">Início: </dt>
+                <dd class="col-sm-9" id="visualizar_start"></dd>
+                <dt class="col-sm-3">Fim: </dt>
+                <dd class="col-sm-9" id="visualizar_end"></dd>
+              </dl>
+              <button type="button" class="btn btn-warning" id="btnViewEditEvento">Editar</button>
+            </div>
+            <div class="editarEvento">
+              <form action="">
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
+    <!-- Modal Cadastrar -->
+    <div class="modal fade" id="cadastrarModal" tabindex="-1" aria-labelledby="cadastrarModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="cadastrarModalLabel">Cadastrar o Evento </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form method="post" id="formCadEvento">
+              <div class="mb-3 row">
+                <label for="inputTitle" class="col-sm-2 col-form-label">Nome:</label>
+                <div class="col-sm-10">
+                  <input type="text" name="cad_title" class="form-control" id="cad_Title" placeholder="Nome do paciente">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputStart" class="col-sm-2 col-form-label">Início:</label>
+                <div class="col-sm-10">
+                  <input type="datetime-local" name="cad_start" class="form-control" id="cad_start">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputEnd" class="col-sm-2 col-form-label">Fim:</label>
+                <div class="col-sm-10">
+                  <input type="datetime-local" name="cad_end" class="form-control" id="cad_end">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputColor" class="col-sm-2 col-form-label">Cor:</label>
+                <div class="col-sm-10">
+                  <input type="color" class="form-control form-control-color" id="cad_color" value="#259B9F" title="Choose your color">
+                </div>
+              </div>
+            </form>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
 
-  <script src='fullcalendar/packages/core/main.js'></script>
-  <script src='fullcalendar/packages/interaction/main.js'></script>
-  <script src='fullcalendar/packages/daygrid/main.js'></script>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success" name="btnCadEvento" id="btnCadEvento">Cadastrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
-
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: ['interaction', 'dayGrid'],
-        defaultDate: '2020-02-12',
-        editable: true,
-        eventLimit: true, // allow "more" link when too many events
-        events: [
-          {
-            title: 'All Day Event',
-            start: '2020-02-01'
-          },
-          {
-            title: 'Long Event',
-            start: '2020-02-07',
-            end: '2020-02-10'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2020-02-09T16:00:00'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2020-02-16T16:00:00'
-          },
-          {
-            title: 'Conference',
-            start: '2020-02-11',
-            end: '2020-02-13'
-          },
-          {
-            title: 'Meeting',
-            start: '2020-02-12T10:30:00',
-            end: '2020-02-12T12:30:00'
-          },
-          {
-            title: 'Lunch',
-            start: '2020-02-12T12:00:00'
-          },
-          {
-            title: 'Meeting',
-            start: '2020-02-12T14:30:00'
-          },
-          {
-            title: 'Happy Hour',
-            start: '2020-02-12T17:30:00'
-          },
-          {
-            title: 'Dinner',
-            start: '2020-02-12T20:00:00'
-          },
-          {
-            title: 'Birthday Party',
-            start: '2020-02-13T07:00:00'
-          },
-          {
-            title: 'Click for Google',
-            url: 'http://google.com/',
-            start: '2020-02-28'
-          }
-        ]
-      });
-
-      calendar.render();
-    });
-
-  </script>
-
-  <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src='js/index.global.min.js'></script>
+    <script src="js/bootstrap5/index.global.min.js"></script>
+    <script src="js/core/locales-all.global.min.js"></script>
+    <script src="js/custom.js"></script>
 
   <?php
-    } else {
-    ?>
-        <br>
-        <div class="alert alert-warning">
-            <p>Usuário não autenticado!</p>
-            <a href="index.php">Realize o login</a>
-        </div>
-    <?php
-    }
-    ?>
+  } else {
+  ?>
+    <br>
+    <div class="alert alert-warning">
+      <p>Usuário não autenticado!</p>
+      <a href="index.php">Realize o login</a>
+    </div>
+  <?php
+  }
+  ?>
+
 </body>
+
+
 
 </html>
