@@ -56,7 +56,10 @@ if (!isset($_SESSION)) {
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="meuPerfil.php">Meu Perfil</a>
+                    <a href="home.php">Home</a>
+                </li>
+                <li>
+                    <a href="meuPerfil.php?cod=<?php echo $_SESSION['cod']?>">Meu Perfil</a>
                 </li>
                 <li>
                     <a href="prontuario.php">Prontuários</a>
@@ -77,10 +80,7 @@ if (!isset($_SESSION)) {
             </ul>
 
             <ul class="list-unstyled CTAs">
-                <li>
-                    <a href="home.php" class="download" href>Voltar ao início</a>
-                </li>
-                <br>
+                
                 <li>
                     <a href="sair.php" class="download">Sair</a>
                 </li>

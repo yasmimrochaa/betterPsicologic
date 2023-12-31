@@ -32,6 +32,8 @@ session_start();
             justify-content: end;
             gap: .1%;
         }
+
+
     </style>
 
 </head>
@@ -55,7 +57,7 @@ session_start();
         <br>
 
         <table class="table table-striped table-hover table-bordered ">
-            <tr style="background-color: #b5ebec">
+            <tr class="table-info">
                 <th>Cod</th>
                 <th>Nome</th>
                 <th>CPF</th>
@@ -89,7 +91,7 @@ session_start();
                     <td><?php echo $exibir["cpf"] ?></td>
                     <td><?php echo $exibir["telefone"] ?></td>
                     <td>
-                        <button class="btn btn-outline-secondary">
+                        <button class="btn btn-primary" style=" background-color: #259B9F">
                             <a href="paciente.php?cod=<?php echo $exibir['cod']?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                     <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -99,7 +101,7 @@ session_start();
                         </button>
                     </td>
                     <td>
-                        <button class="btn btn-outline-secondary" onclick="confirmarExclusao(
+                        <button class="btn btn-danger" onclick="confirmarExclusao(
                             '<?php echo $exibir["cod"] ?>',
                             '<?php echo $exibir["nome"] ?>')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">

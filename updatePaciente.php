@@ -2,7 +2,7 @@
 include_once("conexao.php");
 session_start();
 if (isset($_POST['update'])) {
-    $cpfPsi = $_SESSION['cpf'];
+    $cpfPsi = $_POST['cpfPsi'];
     $nome = $_POST['nome'];
     $cod = $_POST['cod'];
     $dataNasc = $_POST['dataNasc'];
@@ -19,9 +19,22 @@ if (isset($_POST['update'])) {
     dataNasc='$dataNasc',sexo='$sexo',endereco='$endereco',medicamentos='$medicamentos',img='$img',fk_cpfPsi='$cpfPsi'
      WHERE cod = '$cod' AND fk_cpfPsi='$cpfPsi'";
 
-    $result = $conn->query($sql);
+    if ($conn->query($sql) === TRUE) {
+        ?>
+        <script>
+            alert ("Registro atualizado com sucesso!");
+            window.history.back()
+        </script>
+        <?php
+    }else{
+        ?>
+        <script>
+            alert ("Erro ao atualizar o registro!");
+            window.history.back();
+        </script>
+        <?php
+    }
 
 }
-header('Location: prontuario.php');
 
 ?>

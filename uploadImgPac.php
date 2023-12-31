@@ -32,7 +32,8 @@ if (isset($_POST["upload"])) {
             include_once("conexao.php");
             session_start();
             $cod = $_SESSION["cod"];
-            $sql = "UPDATE psicologo SET img = '$novoNome' WHERE cod = $cod";
+            $sql = "UPDATE paciente SET img = '$novoNome' WHERE cod = '$cod'";
+            echo $sql;
             if ($conn->query($sql) == TRUE) {
                 $msg[] = "Upload realizado com sucesso!";
             }else{

@@ -58,13 +58,17 @@ include_once("conexao.php");
             </div>
 
             <ul class="list-unstyled components">
-
                 <li>
-                    <a href="meuPerfilPac.php">Meu Perfil</a>
+                    <a href="#">Home</a>
                 </li>
-                
                 <li>
-                    <a href=""> Agendar um Horario</a>
+                    <a href="meuPerfilPac.php?cod=<?php echo $_SESSION['cod']?>">Meu Perfil</a>
+                </li>
+                <li>
+                    <a href="#"> Agendar um Horario</a>
+                </li>
+                <li>
+                    <a href="#">Meus Horários</a>
                 </li>
                 <li>
                     <!--Fale Conosco!-->
@@ -96,7 +100,7 @@ include_once("conexao.php");
                     </button>
                     <label for="" style="color: #17a2b8;">Seja Bem vindo(a): 
                     <?php
-                        session_start();
+                        
                         echo $_SESSION["nome"];
                         ?>
                     </label>
