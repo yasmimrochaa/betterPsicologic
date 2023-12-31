@@ -26,29 +26,13 @@ session_start();
             align-items: center;
             text-align: center;
         }
-    </style>
 
-    <script>
-        $(document).ready(function() {
-            $("#form-pesquisa").submit(function(evento) {
-                evento.preventDefault();
-                let pesquisa = $("#pesquisa").val;
-                let dados = {
-                    pesquisa: pesquisa
-                }
-                $.post("buscaPessoa.php", dados, function(retorna) {
-                    $(".resultados").html(retorna);
-                });
-            });
-        });
-
-        function confirmarExclusao(cod, nome, cpf) {
-            if (window.confirm("Deseja realmente excluir o registro: \n" + cod + " - " + nome)) {
-                window.location = "excluirPaciente.php?cod=" + cod;
-            }
+        .box-search {
+            display: flex;
+            justify-content: end;
+            gap: .1%;
         }
-    </script>
-
+    </style>
 
 </head>
 
@@ -59,18 +43,77 @@ session_start();
     ?>
         <h2 style="text-align: center; padding-bottom: 10px;"> Pacientes Cadastrados</h2>
 
-        <form id="form-pesquisa" action="" method="post">
-            <div class="col-6">
-                <input type="text" size="50" name="pesquisa" id="pesquisa" placeholder="Digite o texto da pesquisa">
-                <input type="submit" name="btnEnviar" id="btnEnviar" value="Pesquisar">
-            </div>
-        </form>
-
-        <br><br><br>
-
-        <div class="resultados">
-
+        <div class="box-search">
+            <input type="search" class="form-control w-25" placeholder="Pesquisar..." id="pesquisar">
+            <button onclick="searchData()" type="button" class="btn btn-info">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </button>
         </div>
+
+        <br>
+
+        <table class="table table-striped table-hover table-bordered ">
+            <tr style="background-color: #b5ebec">
+                <th>Cod</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th class="d-none d-lg-table-cell">Telefone</th>
+                <th width="120" class="text-center">Visualizar</th>
+                <th width="120" class="text-center">Deletar</th>
+            </tr>
+
+            <?php
+            $cpfPsi = $_SESSION["cpf"];
+            if (!empty($_GET['search'])) {
+                $data = $_GET['search'];
+                $sql = "SELECT * 
+                FROM paciente 
+                WHERE fk_cpfPsi = '$cpfPsi' 
+                AND cod LIKE '%$data%' 
+                OR nome LIKE '%$data%'
+                ORDER BY cod ";
+            } else {
+                $sql = "SELECT * 
+                FROM paciente 
+                WHERE fk_cpfPsi = '$cpfPsi'
+                ORDER BY cod ";
+            };
+            $dadosPessoa = $conn->query($sql);
+            while ($exibir = $dadosPessoa->fetch_assoc()) {
+            ?>
+                <tr>
+                    <td><?php echo $exibir["cod"] ?></td>
+                    <td><?php echo $exibir["nome"] ?></td>
+                    <td><?php echo $exibir["cpf"] ?></td>
+                    <td><?php echo $exibir["telefone"] ?></td>
+                    <td>
+                        <button class="btn btn-outline-secondary">
+                            <a href="paciente.php?cod=<?php echo $exibir['cod']?>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                </svg>
+                            </a>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-secondary" onclick="confirmarExclusao(
+                            '<?php echo $exibir["cod"] ?>',
+                            '<?php echo $exibir["nome"] ?>')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+
+            <?php
+            }
+            ?>
+        </table>
+
 
     <?php
     } else {
@@ -84,6 +127,25 @@ session_start();
     }
     ?>
 
+    <script>
+        function confirmarExclusao(cod, nome, cpf) {
+            if (window.confirm("Deseja realmente excluir o registro: \n" + cod + " - " + nome)) {
+                window.location = "excluirPaciente.php?cod=" + cod;
+            }
+        }
+
+        var search = document.getElementById('pesquisar');
+
+        search.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                searchData();
+            }
+        });
+
+        function searchData() {
+            window.location = 'prontuario.php?search=' + search.value;
+        }
+    </script>
 
 
 </body>

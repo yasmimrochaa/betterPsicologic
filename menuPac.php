@@ -67,7 +67,10 @@ include_once("conexao.php");
                     <a href=""> Agendar um Horario</a>
                 </li>
                 <li>
-                    <a href="faleConosco.php">Fale conosco</a>
+                    <!--Fale Conosco!-->
+
+                    <!--Colando email para contato. O comando 'malito' permite abrir o app de e-mail-->
+                    <a href="mailto:mytherapyy.0@gmail.com?subject=Assunto do mytherapyy.0@gmail.com&body=Conteúdo do email que será preenchido automaticamente" class="dashboard-nav-item">Fale Conosco</a>
                 </li>
             </ul>
 

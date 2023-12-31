@@ -25,7 +25,8 @@ session_start();
     require_once("menu.php");
   ?>
 
-    <h2 style="text-align: center; padding-bottom: 30px;"> Agenda </h2>
+    <h2 style="text-align: center;" class="mb-5"> Agenda </h2>
+    <span id="msg"></span>
 
     <div id='calendar' class="fc fc-media-screen fc-direction-ltr fc-theme-standard"></div>
 
@@ -71,11 +72,27 @@ session_start();
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form method="post" id="formCadEvento">
+            <span id="msgCadEvento"></span>
+            <form action="cadastrarEvento.php"  method="POST" id="formCadEvento">
               <div class="mb-3 row">
                 <label for="inputTitle" class="col-sm-2 col-form-label">Nome:</label>
                 <div class="col-sm-10">
-                  <input type="text" name="cad_title" class="form-control" id="cad_Title" placeholder="Nome do paciente">
+
+                  <select name="cad_title" class="form-control" id="cad_Title">
+                    <?php
+                    $cpfPsi = $_SESSION["cpf"];
+                    $sql = "SELECT * FROM paciente WHERE fk_cpfPsi = '$cpfPsi'";
+                    $dadosPessoa = $conn->query($sql);
+                    if ($dadosPessoa->num_rows > 0) {
+                      while ($exibir = $dadosPessoa->fetch_assoc()) {
+                    ?>
+                        <option value="<?php echo $exibir["nome"] ?>"><?php echo $exibir["nome"] ?></option>
+                    <?php
+                      }
+                    }
+                    ?>
+                  </select>
+
                 </div>
               </div>
               <div class="mb-3 row">
@@ -90,29 +107,23 @@ session_start();
                   <input type="datetime-local" name="cad_end" class="form-control" id="cad_end">
                 </div>
               </div>
-              <div class="mb-3 row">
-                <label for="inputColor" class="col-sm-2 col-form-label">Cor:</label>
-                <div class="col-sm-10">
-                  <input type="color" class="form-control form-control-color" id="cad_color" value="#259B9F" title="Choose your color">
-                </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-success" name="btnCadEvento" id="btnCadEvento">Cadastrar</button>
               </div>
             </form>
-
-
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-success" name="btnCadEvento" id="btnCadEvento">Cadastrar</button>
           </div>
         </div>
       </div>
     </div>
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src='js/index.global.min.js'></script>
     <script src="js/bootstrap5/index.global.min.js"></script>
     <script src="js/core/locales-all.global.min.js"></script>
     <script src="js/custom.js"></script>
+
 
   <?php
   } else {

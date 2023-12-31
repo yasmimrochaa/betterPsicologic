@@ -9,8 +9,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style/meuperfil.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
@@ -37,8 +37,9 @@ session_start();
                                 <div class="small font-italic text-muted mb-4">JPG ou PNG de até 5 MB</div>
 
                                 <div>
-                                    <input type="file" name="upload" id="upload" accept="image/png, image/jpeg, image/jpg">
+                                    <input class="form-control form-control-sm" type="file" name="upload" id="upload" accept="image/png, image/jpeg, image/jpg">
                                 </div>
+                                
 
                             </div>
                             <button class="btn" type="submit" name="upload" style="background-color: #259B9F;">Confirmar</button>
