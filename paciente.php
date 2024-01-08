@@ -10,7 +10,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style/meuperfil.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Prontuário Médico</title>
     <style>
         table,
@@ -83,8 +82,13 @@ session_start();
             cursor: pointer;
         }
 
-        .nav-link{
+        .nav-link {
             color: #259B9F;
+        }
+
+        .btn-primary {
+            background-color: #259B9F;
+            border-color: #259B9F;
         }
     </style>
 </head>
@@ -106,6 +110,9 @@ session_start();
                             AND cod = '$cod'";
             $result = $conn->query($sql);
             $paciente = $result->fetch_assoc();
+            $cpf = $paciente['cpf'];
+            $sql1 = "SELECT * FROM sessao WHERE fk_cpfPac = '$cpf' AND fk_cpfPsi = '$cpfPsi' ORDER BY dataHora";
+            $resultado = $conn->query($sql1);
         }
         ?>
 
@@ -198,80 +205,121 @@ session_start();
             </div>
 
             <!-- SESSÕES -->
+
             <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                 <!-- INICIO DO CONTEUDO -->
-
                 <h5 class="card-header">Resumo das sessões</h5>
+                <br><span id="msg"></span>
                 <br>
-                <table class="table table-striped table-hover table-bordered">
-                    <tr class="table-info">
-                        <th>Dia</th>
-                        <th>Descrição da sessão</th>
-                        <th>Editar</th>
-                        <th>Excluir</th>
-                    </tr>
-                    <tr class="small mb-2">
-                        <td>11/12/20</td>
-                        <td>dbewgucbdwjcveghcveghvceghjcbhrfvbrhkdbdhcbgefhc brc gfghrfbhgfghgjhgftyjgyughjfgbhrycjbh</td>
-                        <td>
-                            <button class="btn btn-primary" style=" background-color: #259B9F">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
-                                    <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001" />
-                                </svg>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
-                                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
-                                </svg>
-                            </button>
-                        </td>
-                    </tr>
-                </table>
 
-                <button type="button" class="btn btn-primary" style="background-color: #259B9F;" data-toggle="modal" data-target="#ExemploModalCentralizado">Nova Sessão</button>
+                <button type="button" class="btn btn-primary" style="background-color: #259B9F;border-color: #259B9F; margin-bottom: 10px;" data-bs-toggle="modal" data-bs-target="#modalCadastrar">Nova Sessão</button>
                 <!-- The Modal -->
-                <!-- Modal -->
-                <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                <!-- Modal Cadastrar -->
+                <div class="modal fade" id="modalCadastrar" tabindex="-1" aria-labelledby="modalCadastrar" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="TituloModalCentralizado">Nova Sessão</h5>
+                                <h5 class="modal-title" id="TituloModalCadastrar">Nova Sessão</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="">
+                                <form id="formCadSessao">
                                     <div class="row mb-3">
                                         <label for="inputEmail3" class="col-sm-4 col-form-label">Data e hora:</label>
                                         <div class="col-sm-8">
-                                            <input type="datetime-local" class="form-control" id="inputEmail3">
+                                            <input type="datetime-local" class="form-control" name="dataHoraCad" id="dataHoraCad" required>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="inputEmail3" class="col-sm-4 col-form-label">Descreva a Sessão:</label>
                                         <div class="col-sm-8">
-                                            <textarea class="form-control" id="floatingTextarea" rows="6"></textarea>
+                                            <textarea class="form-control" name="descricaoCad" id="descricaoCad" rows="6" required></textarea>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="cpf" value="<?php echo $paciente['cpf'] ?>">
+                                    <input type="submit" name="cadSessao" id="cadSessao" class="btn btn-success" value="Salvar">
                                 </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success">Salvar</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <!-- FIM -->
+                <br>
+                <table class="table table-striped table-hover table-bordered">
+                    <tr class="table-info">
+                        <th>Cod</th>
+                        <th>Dia e Hora</th>
+                        <th>Descrição da sessão</th>
+                        <th>Excluir</th>
+                    </tr>
+                    <?php
+                    while ($sessao = $resultado->fetch_assoc()) {
+                        $dataFormatada = date('d/m/Y  -  H:i', strtotime($sessao['dataHora']));
+                    ?>
+                        <tr class="small mb-2">
+                            <td><?php echo $sessao['cod'] ?></td>
+                            <td id="data"><?php echo $dataFormatada ?></td>
+                            <td><?php echo $sessao['descricao'] ?></td>
+                            <td>
+                                <button class="btn btn-danger" onclick="confirmarExclusao(
+                            '<?php echo $sessao["cod"] ?>',
+                            '<?php echo $sessao["dataHora"] ?>')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
             </div>
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+    <script type='text/javascript'>
+        const msg = document.getElementById("msg");
+        const modalCadastrar = new bootstrap.Modal('#modalCadastrar');
 
+        const formCadSessao = document.getElementById("formCadSessao");
+        formCadSessao.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const dadosForm = new FormData(formCadSessao);
+            dadosForm.append("add", 1);
+            const dados = await fetch("cadastrarSessao.php", {
+                method: "POST",
+                body: dadosForm,
+            });
+            const resposta = await dados.json();
+            if (resposta['erro']) {
+                msg.innerHTML = resposta['msg'];
+            } else {
+                msg.innerHTML = resposta['msg'];
+            };
+            formCadSessao.reset();
+            modalCadastrar.hide();
+            removerMsg();
+            window.location.reload();
+        });
+
+        function confirmarExclusao(cod, dataHora) {
+            if (window.confirm("Deseja realmente excluir o registro: \n" + cod + " - " + dataHora)) {
+                window.location = "excluirSessao.php?cod=" + cod;
+            }
+        };
+
+        function removerMsg() {
+            setTimeout(() => {
+                document.getElementById('msg').innerHTML = "";
+            }, 5000)
+        };
+    </script>
 
 </body>
 

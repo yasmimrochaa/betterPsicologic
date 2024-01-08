@@ -3,7 +3,8 @@ require_once("conexao.php");
 session_start();
 
 $usuario = $conn->real_escape_string($_POST["email"]);
-$senha = $_POST["password"];
+$senha = md5($_POST["password"]);
+
 
 $sql = "SELECT * 
             from psicologo 
@@ -23,7 +24,10 @@ if ($resultado->num_rows > 0) {
     header("location: home.php");
 }else{
     ?>
-    <script>window.history.back();</script>
+    <script>
+        alert("Email ou senha incorretos!");
+        window.history.back();
+    </script>
     <?php
 }
 ?>

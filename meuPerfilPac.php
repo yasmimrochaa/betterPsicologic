@@ -31,7 +31,7 @@ session_start();
         ?>
 
         <div class="container-xl px-4 mt-4">
-            <h2 style="text-align: center; padding-bottom: 25px;"> Meu Perfil </h2>
+            <h2 style="text-align: center; padding-bottom: 10px;"> Meu Perfil </h2> <hr> <br>
             <div class="row">
 
                 <div class="col-xl-4">
@@ -44,7 +44,7 @@ session_start();
                             <div class="card-body text-center">
                                 <?php $sql = "SELECT * from paciente 
                                                 WHERE cod = '$cod'";
-                                    $result = $conn->query($sql);
+                                $result = $conn->query($sql);
                                 if ($result->num_rows > 0) {
                                     while ($exibir = $result->fetch_assoc()) {
                                 ?>
@@ -55,9 +55,9 @@ session_start();
                                                     WHERE cod = '$cod'";
                                         $result = $conn->query($sql);
                                         $pessoa = $result->fetch_assoc();
-                                    } 
+                                    }
                                 }
-                               ?>
+                                ?>
                                 <!-- implementar um select do banco para obter a img -->
                                 <div class="small font-italic text-muted mb-4">JPG ou PNG de até 5 MB</div>
 
@@ -69,7 +69,6 @@ session_start();
 
                             </div>
                             <button class="btn" type="submit" name="upload" style="background-color: #259B9F;">Confirmar</button>
-
                     </form>
                 </div>
             </div>
@@ -91,15 +90,9 @@ session_start();
                                 <input class="form-control" name="cpf" id="cpf" type="text" placeholder="Insira seu CPF" value="<?php echo $paciente["cpf"]; ?>">
                             </div>
 
-                            <div class="row gx-3 mb-3">
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                    <input class="form-control" name="email" id="email" type="email" placeholder="Insira seu email" value="<?php echo $paciente["email"]; ?>">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputEmailAddress">Senha</label>
-                                    <input class="form-control" name="senha" id="senha" type="text" placeholder="Insira sua senha" value="<?php echo $paciente["senha"]; ?>">
-                                </div>
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                <input class="form-control" name="email" id="email" type="email" placeholder="Insira seu email" value="<?php echo $paciente["email"]; ?>">
                             </div>
 
                             <div class="row gx-3 mb-3">
@@ -114,6 +107,7 @@ session_start();
                                     <input class="form-control" name="dataNasc" id="dataNasc" type="date" name="birthday" placeholder="Insira sua data de nascimento" value="<?php echo $paciente["dataNasc"]; ?>">
                                 </div>
                             </div>
+                            <input type="hidden" name="senha" value="<?php echo $paciente['senha'] ?>">
                             <input type="hidden" name="cpfPsi" value="<?php echo $paciente['fk_cpfPsi'] ?>">
                             <input type="hidden" name="img" value="<?php echo $paciente['img'] ?>">
                             <input type="hidden" name="cod" value="<?php echo $paciente['cod'] ?>">

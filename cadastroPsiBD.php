@@ -8,9 +8,10 @@ $telefone = $_POST["telefone"];
 $dataNasc = $_POST["dataNasc"];
 $senha = $_POST["password"];
 $img = 'user.png';
+$senhaCriptografada = md5($senha);
 
 $sql = "INSERT INTO psicologo (cpf, nome, senha, email, telefone, dataNasc, img) 
-            VALUES ('$cpf', '$nome', '$senha', '$email', '$telefone', '$dataNasc', '$img')";
+            VALUES ('$cpf', '$nome', '$senhaCriptografada', '$email', '$telefone', '$dataNasc', '$img')";
 
 echo $sql;
 

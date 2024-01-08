@@ -11,10 +11,14 @@ $sexo = $_POST["sexo"];
 $endereco = $_POST["endereco"];
 $medicamentos = $_POST["medicamentos"];
 $senha = $_POST["password"];
+$img = 'user.png';
+$cpfPsi = $_SESSION['cpf'];
+$senhaCriptografada = md5($senha);
 
-$sql = "INSERT INTO paciente(cpf, nome, senha, email, telefone, dataNasc, sexo, endereco, medicamentos)
-                 VALUES ('$cpf', '$nome', '$senha', '$email', '$telefone', 
-                        '$dataNasc', '$sexo', '$endereco', '$medicamentos')";
+
+$sql = "INSERT INTO paciente(cpf, nome, senha, email, telefone, dataNasc, sexo, endereco, medicamentos, img, fk_cpfPsi)
+                 VALUES ('$cpf', '$nome', '$senhaCriptografada', '$email', '$telefone', 
+                        '$dataNasc', '$sexo', '$endereco', '$medicamentos', '$img', '$cpfPsi')";
 
 echo $sql;
 

@@ -42,8 +42,8 @@ session_start();
                             <div class="card-header">Foto de Perfil </div>
 
                             <div class="card-body text-center">
-                                <?php include_once("exibirImg.php"); 
-                               ?>
+                                <?php include_once("exibirImg.php");
+                                ?>
                                 <!-- implementar um select do banco para obter a img -->
                                 <div class="small font-italic text-muted mb-4">JPG ou PNG de até 5 MB</div>
 
@@ -77,22 +77,16 @@ session_start();
                                 <input class="form-control" name="cpf" id="cpf" type="text" placeholder="Insira seu CPF" value="<?php echo $pessoa["cpf"]; ?>">
                             </div>
 
-                            <div class="row gx-3 mb-3">
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                    <input class="form-control" name="email" id="email" type="email" placeholder="Insira seu email" value="<?php echo $pessoa["email"]; ?>">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputEmailAddress">Senha</label>
-                                    <input class="form-control" name="senha" id="senha" type="text" placeholder="Insira sua senha" value="<?php echo $pessoa["senha"]; ?>">
-                                </div>
+                            <div class="mb-3">
+                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                <input class="form-control" name="email" id="email" type="email" placeholder="Insira seu email" value="<?php echo $pessoa["email"]; ?>">
                             </div>
 
                             <div class="row gx-3 mb-3">
 
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputPhone">Telefone</label>
-                                    <input class="form-control" name="telefone" id="telefone" type="tel" placeholder="Insira seu número de telefone" value="<?php echo $pessoa["telefone"]; ?>">
+                                    <input class="form-control" name="telefone" id="telefone" type="text" placeholder="Insira seu número de telefone" value="<?php echo $pessoa["telefone"]; ?>">
                                 </div>
 
                                 <div class="col-md-6">
@@ -100,6 +94,7 @@ session_start();
                                     <input class="form-control" name="dataNasc" id="dataNasc" type="date" name="birthday" placeholder="Insira sua data de nascimento" value="<?php echo $pessoa["dataNasc"]; ?>">
                                 </div>
                             </div>
+                            <input type="hidden" name="senha" value="<?php echo $pessoa['senha'] ?>">
                             <input type="hidden" name="img" value="<?php echo $pessoa['img'] ?>">
                             <input type="hidden" name="cod" value="<?php echo $pessoa['cod'] ?>">
                             <br>
@@ -133,6 +128,15 @@ session_start();
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('input[name=telefone]').mask('(00)0 0000-0000');
+                $('input[name=cpf]').mask('000.000.000-00')
+            })
+        </script>
     <?php
     } else {
     ?>

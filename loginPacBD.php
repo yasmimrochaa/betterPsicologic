@@ -3,7 +3,7 @@ require_once("conexao.php");
 session_start();
 
 $email = $conn->real_escape_string($_POST["email"]);
-$senha = $_POST["password"];
+$senha = md5($_POST["password"]);
 
 $sql = "SELECT * 
             from paciente 
@@ -22,11 +22,15 @@ if ($resultado->num_rows > 0) {
     $_SESSION["sexo"] = $dados_usuario["sexo"];
     $_SESSION["endereco"] = $dados_usuario["endereco"];
     $_SESSION["medicamentos"] = $dados_usuario["medicamentos"];
+    $_SESSION["fk_cpfPsi"] = $dados_usuario["fk_cpfPsi"];
 
-    header("location: menuPac.php");
+    header("location: homePac.php");
 }else{
     ?>
-    <script>window.history.back();</script>
+    <script>
+        alert("Email ou senha incorretos!");
+        window.history.back();
+    </script>
     <?php
 }
 ?>

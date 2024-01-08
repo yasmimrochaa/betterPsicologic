@@ -10,17 +10,13 @@ body {
 .page {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .coluna{
-    width: 40%;
-    padding: 50px;
-
-}
-
-.coluna2{
-    width: 50%;
-    padding-left: 350px;
+    width: 60%;
     padding-top: 20px;
     padding-bottom: 20px;
 }

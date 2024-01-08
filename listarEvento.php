@@ -1,7 +1,9 @@
 <?php
 include_once("conexao.php");
+session_start();
 
-$sql = "SELECT id, title, start, end, color, fk_cpfPac, fk_cpfPsi  FROM evento";
+$cpfPsi = $_SESSION['cpf'];
+$sql = "SELECT id, title, start, end, color, fk_cpfPsi  FROM evento WHERE fk_cpfPsi = '$cpfPsi'";
 
 $result = $conn->query($sql);
 

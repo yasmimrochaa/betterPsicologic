@@ -1,5 +1,8 @@
 <?php
 include_once("conexao.php");
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +19,6 @@ include_once("conexao.php");
         body {
             margin: 0;
             padding: 0;
-            background-image: url('sidebar/sidebar/fundo.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -59,16 +61,16 @@ include_once("conexao.php");
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="#">Home</a>
+                    <a href="homePac.php">Home</a>
                 </li>
                 <li>
                     <a href="meuPerfilPac.php?cod=<?php echo $_SESSION['cod']?>">Meu Perfil</a>
                 </li>
                 <li>
-                    <a href="#"> Agendar um Horario</a>
+                    <a href="agendaPac.php"> Agendar um Horario</a>
                 </li>
                 <li>
-                    <a href="#">Meus Horários</a>
+                    <a href="meusHorarios.php">Meus Horários</a>
                 </li>
                 <li>
                     <!--Fale Conosco!-->
@@ -100,7 +102,6 @@ include_once("conexao.php");
                     </button>
                     <label for="" style="color: #17a2b8;">Seja Bem vindo(a): 
                     <?php
-                        
                         echo $_SESSION["nome"];
                         ?>
                     </label>

@@ -32,7 +32,7 @@ session_start();
             <p style="margin-bottom: 5px; text-align: center;">Digite os dados do Paciente nos campos abaixo.</p>
 
             <label>Nome completo</label>
-            <input name="nome" text" placeholder="Digite seu nome completo" autofocus="true" required>
+            <input name="nome" placeholder="Digite seu nome completo" autofocus="true" required>
 
             <label>E-mail</label>
             <input name="email" type="email" placeholder="Digite seu e-mail" required>

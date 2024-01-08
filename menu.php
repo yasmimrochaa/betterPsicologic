@@ -18,7 +18,6 @@ if (!isset($_SESSION)) {
         body {
             margin: 0;
             padding: 0;
-            background-image: url('sidebar/sidebar/fundo.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -59,17 +58,17 @@ if (!isset($_SESSION)) {
                     <a href="home.php">Home</a>
                 </li>
                 <li>
-                    <a href="meuPerfil.php?cod=<?php echo $_SESSION['cod']?>">Meu Perfil</a>
+                    <a href="meuPerfil.php?cod=<?php echo $_SESSION['cod'] ?>">Meu Perfil</a>
                 </li>
                 <li>
                     <a href="prontuario.php">Prontuários</a>
 
                 </li>
                 <li>
-                    <a href="agendapsi.php"> Minha Agenda</a>
+                    <a href="agendapsi.php">Minha Agenda</a>
                 </li>
                 <li>
-                    <a href="cadastroPaciente.php">Cadastrar Clientes</a>
+                    <a href="cadastroPaciente.php">Cadastrar Paciente</a>
                 </li>
                 <li>
                     <!--Fale Conosco!-->
@@ -79,12 +78,12 @@ if (!isset($_SESSION)) {
                 </li>
             </ul>
 
-            <ul class="list-unstyled CTAs">
-                
-                <li>
-                    <a href="sair.php" class="download">Sair</a>
-                </li>
-            </ul>
+                <ul class="list-unstyled CTAs">
+
+                    <li>
+                        <a href="sair.php" class="download">Sair</a>
+                    </li>
+                </ul>
 
         </nav>
 

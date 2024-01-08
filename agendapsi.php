@@ -4,7 +4,7 @@ session_start();
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <!-- Required meta tags -->
@@ -25,10 +25,15 @@ session_start();
     require_once("menu.php");
   ?>
 
-    <h2 style="text-align: center;" class="mb-5"> Agenda </h2>
-    <span id="msg"></span>
+    <div class="container">
 
-    <div id='calendar' class="fc fc-media-screen fc-direction-ltr fc-theme-standard"></div>
+      <h1 style="text-align: center;" class="mb-5"> Agenda </h1>
+
+      <span id="msg" style="padding-bottom: 10px;"></span>
+
+      <div id='calendar'></div>
+
+    </div>
 
     <!-- Modal Visualizar -->
     <div class="modal fade" id="visualizarModal" tabindex="-1" aria-labelledby="visualizarModalLabel" aria-hidden="true">
@@ -36,10 +41,12 @@ session_start();
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="visualizarModalLabel">Visualizar o Evento </h1>
+            <h1 class="modal-title fs-5" id="editarModalLabel" style="display: none;">Editar o Evento </h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="visualizarEvento">
+            <span id="msgViewEvento"></span>
+            <div id="visualizarEvento">
               <dl class="row">
                 <dt class="col-sm-3">ID: </dt>
                 <dd class="col-sm-9" id="visualizar_id"></dd>
@@ -50,18 +57,47 @@ session_start();
                 <dt class="col-sm-3">Fim: </dt>
                 <dd class="col-sm-9" id="visualizar_end"></dd>
               </dl>
-              <button type="button" class="btn btn-warning" id="btnViewEditEvento">Editar</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-warning" id="btnViewEditEvento" sty>Editar</button>
+                <button type="button" class="btn btn-danger" id="btnApagarEvento" sty>Apagar</button>
+              </div>
             </div>
-            <div class="editarEvento">
-              <form action="">
 
+
+            <div id="editarEvento" style="display: none;">
+              <!-- Modal Editar -->
+              <span id="msgEditEvento"></span>
+              <form method="POST" id="formEditEvento">
+                <input type="hidden" name="edit_id" id="edit_id">
+                <div class="mb-3 row">
+                  <label for="edit_title" class="col-sm-2 col-form-label">Nome:</label>
+                  <div class="col-sm-10">
+                    <input type="text" id="edit_title" name="edit_title" class="form-control">
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="edit_start" class="col-sm-2 col-form-label">Início:</label>
+                  <div class="col-sm-10">
+                    <input type="datetime-local" class="form-control" name="edit_start" id="edit_start">
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="edit_end" class="col-sm-2 col-form-label">Fim:</label>
+                  <div class="col-sm-10">
+                    <input type="datetime-local" class="form-control" name="edit_end" id="edit_end">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" name="btnViewEvento" id="btnViewEvento">Cancelar</button>
+                  <button type="submit" class="btn btn-warning" name="btnEditEvento" id="btnEditEvento">Salvar</button>
+                </div>
               </form>
             </div>
           </div>
         </div>
+
       </div>
     </div>
-
 
     <!-- Modal Cadastrar -->
     <div class="modal fade" id="cadastrarModal" tabindex="-1" aria-labelledby="cadastrarModalLabel" aria-hidden="true">
@@ -73,36 +109,21 @@ session_start();
           </div>
           <div class="modal-body">
             <span id="msgCadEvento"></span>
-            <form action="cadastrarEvento.php"  method="POST" id="formCadEvento">
+            <form method="POST" id="formCadEvento">
               <div class="mb-3 row">
-                <label for="inputTitle" class="col-sm-2 col-form-label">Nome:</label>
+                <label for="cad_title" class="col-sm-2 col-form-label">Nome:</label>
                 <div class="col-sm-10">
-
-                  <select name="cad_title" class="form-control" id="cad_Title">
-                    <?php
-                    $cpfPsi = $_SESSION["cpf"];
-                    $sql = "SELECT * FROM paciente WHERE fk_cpfPsi = '$cpfPsi'";
-                    $dadosPessoa = $conn->query($sql);
-                    if ($dadosPessoa->num_rows > 0) {
-                      while ($exibir = $dadosPessoa->fetch_assoc()) {
-                    ?>
-                        <option value="<?php echo $exibir["nome"] ?>"><?php echo $exibir["nome"] ?></option>
-                    <?php
-                      }
-                    }
-                    ?>
-                  </select>
-
+                  <input type="text" name="cad_title" class="form-control" id="cad_Title" placeholder="Nome do paciente">
                 </div>
               </div>
               <div class="mb-3 row">
-                <label for="inputStart" class="col-sm-2 col-form-label">Início:</label>
+                <label for="cad_start" class="col-sm-2 col-form-label">Início:</label>
                 <div class="col-sm-10">
                   <input type="datetime-local" name="cad_start" class="form-control" id="cad_start">
                 </div>
               </div>
               <div class="mb-3 row">
-                <label for="inputEnd" class="col-sm-2 col-form-label">Fim:</label>
+                <label for="cad_end" class="col-sm-2 col-form-label">Fim:</label>
                 <div class="col-sm-10">
                   <input type="datetime-local" name="cad_end" class="form-control" id="cad_end">
                 </div>
@@ -115,7 +136,7 @@ session_start();
         </div>
       </div>
     </div>
-    </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

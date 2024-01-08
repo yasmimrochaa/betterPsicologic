@@ -5,11 +5,14 @@ body {
     margin: 0;
     padding: 0;
     color: #000000;
+    background-color: #d9d9d9;
 }
 
 .page {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .coluna{
@@ -20,7 +23,7 @@ body {
 }
 
 
-.formLogin {
+.form {
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.911);
@@ -31,7 +34,7 @@ body {
 }
 
 
-.formLogin h1 {
+.form h1 {
     padding: 0;
     margin: 0;
     text-align: center;
@@ -39,14 +42,14 @@ body {
     font-size: 2.3em;
 }
 
-.formLogin p {
+.form p {
     display: inline-block;
     font-size: 14px;
     color: #666;
     margin-bottom: 25px;
 }
 
-.formLogin input {
+.form input {
     padding: 15px;
     font-size: 14px;
     background-color: #C8F7F8;
@@ -59,16 +62,16 @@ body {
 }
 
 
-.formLogin input:focus {
+.form input:focus {
     border: 1px solid #0097B2;
 }
 
-.formLogin label {
+.form label {
     font-size: 14px;
     font-weight: 600;
 }
 
-.formLogin a {
+.form a {
     text-align: end;
     text-decoration: none;
     display: inline-block;
@@ -78,7 +81,7 @@ body {
     transition: all linear 160ms;
 }
 
-.formLogin a:hover {
+.form a:hover {
     color: #259B9F;
 }
 
