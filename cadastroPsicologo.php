@@ -30,7 +30,7 @@ session_start();
                     <input name="cpf" type="text" placeholder="Digite seu cpf" required>
 
                     <label>Telefone</label>
-                    <input name="telefone" type="text" placeholder="Digite seu Telefone" required>
+                    <input name="telefone" type="text" placeholder="Digite seu telefone" required>
 
                     <label>Data de Nascimento</label>
                     <input name="dataNasc" type="date" required>
@@ -55,7 +55,7 @@ session_start();
         $(document).ready(function() {
             $('input[name=telefone]').mask('(00)0 0000-0000');
             $('input[name=cpf]').mask('000.000.000-00')
-        })
+        });
     </script>
 
 </body>

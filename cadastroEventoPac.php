@@ -3,14 +3,14 @@ include_once("conexao.php");
 session_start();
 
 $start = $_POST['dataHora'];
-$querySelect = "SELECT * FROM evento WHERE start = '$start'";
+$cpfPsi = $_SESSION['fk_cpfPsi'];
+$querySelect = "SELECT * FROM evento WHERE start = '$start' AND fk_cpfPsi = '$cpfPsi' ";
 $resposta = $conn->query($querySelect);
 if ($resposta->num_rows == 0) {
     $title = $_SESSION['nome'];
     $end = strtotime($start);
     $endTimestamp = strtotime('+1 hours', $end);
     $end = date('Y-m-d H:i:s', $endTimestamp);
-    $cpfPsi = $_SESSION['fk_cpfPsi'];
     $queryInsert = "INSERT INTO evento (title, start, end, color, fk_cpfPsi)
                     VALUES ('$title', '$start', '$end', '#259B9F', '$cpfPsi')";
     if($conn->query($queryInsert) === TRUE){

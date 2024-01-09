@@ -26,7 +26,7 @@ if ($conn->query($sql) === TRUE) {
 ?>
     <script>
         alert("Registro salvo com sucesso!");
-        window.location = "cadastroPaciente.php";
+        window.location = "prontuario.php";
     </script>
 <?php
 } else {

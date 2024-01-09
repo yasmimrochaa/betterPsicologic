@@ -48,7 +48,7 @@ session_start();
                                 <div class="small font-italic text-muted mb-4">JPG ou PNG de até 5 MB</div>
 
                                 <div>
-                                    <label for="formFileSm" class="form-label">Inserir nova foto</label>
+                                    <label for="formFileSm" class="form-label">Insira uma nova foto e clique em confirmar</label>
                                     <input class="form-control form-control-sm" type="file" name="upload" id="upload" accept="image/png, image/jpeg, image/jpg">
                                 </div>
 
@@ -118,24 +118,21 @@ session_start();
             </div>
         </div>
         </div>
+        
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/main.js"></script>
         <script>
             function confirmarExclusao(cod) {
                 if (window.confirm("Deseja confirmar a exclusão?")) {
-                    window.location = "excluirPerfil.php?cod" + cod;
+                    window.location = "excluirPerfil.php?cod=";
                 }
             }
-        </script>
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-        <script src="js/main.js"></script>
-        <script>
+
             $(document).ready(function() {
-                $('input[name=telefone]').mask('(00)0 0000-0000');
-                $('input[name=cpf]').mask('000.000.000-00')
-            })
+            $('#telefone').mask('(00)0 0000-0000');
+            $('#cpf').mask('000.000.000-00');
+        });
         </script>
     <?php
     } else {

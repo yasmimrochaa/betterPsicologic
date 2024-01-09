@@ -31,4 +31,3 @@ if ($conn->query($sql) === TRUE) {
 <?php
 }
 ?>
-?>
